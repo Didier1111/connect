@@ -72,6 +72,14 @@ If you're interested in contributing to this vision, here's how to get involved:
 - [Setup Script](SETUP_SCRIPT.md) - Remaining infrastructure setup guide
 - [File Summary](FILE_SUMMARY.md) - Overview of all repository files
 
+### Recruitment Automation
+- [Automated Recruitment Process](AUTOMATED_RECRUITMENT.md) - Comprehensive recruitment framework
+- [Recruitment Tools README](RECRUITMENT_TOOLS.md) - Documentation for recruitment automation tools
+- GitHub Scanner (github-scanner.js) - Identifies GitHub contributors
+- Twitter Scanner (twitter-scanner.js) - Finds Twitter users interested in open-source
+- Recruitment Scheduler (recruitment-scheduler.js) - Daily automation scheduler
+- Outreach Automation (outreach-automation.js) - Sends personalized messages to candidates
+
 ### Outreach & Collaboration
 - [Project Description](PROJECT_DESC.md) - Overview for sharing with potential collaborators
 - [Collaborator Search Guide](COLLABORATOR_SEARCH.md) - Strategies for finding potential collaborators
