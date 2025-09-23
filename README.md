@@ -1,12 +1,20 @@
 # Project Connect
 
-Project Connect is building the framework for viral, monetized open-source teams with equitable remuneration for all contributors.
+**Building viral, monetized open-source teams with equitable remuneration for all contributors**
 
-![GitHub stars](https://img.shields.io/github/stars/Didier1111/connect?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Didier1111/connect?style=social)
-![GitHub issues](https://img.shields.io/github/issues/Didier1111/connect)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/Didier1111/connect)
-![GitHub license](https://img.shields.io/github/license/Didier1111/connect)
+[![GitHub stars](https://img.shields.io/github/stars/Didier1111/connect?style=social)](https://github.com/Didier1111/connect/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Didier1111/connect?style=social)](https://github.com/Didier1111/connect/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/Didier1111/connect)](https://github.com/Didier1111/connect/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/Didier1111/connect)](https://github.com/Didier1111/connect/pulls)
+[![GitHub license](https://img.shields.io/github/license/Didier1111/connect)](https://github.com/Didier1111/connect/blob/master/LICENSE)
+
+## About
+
+Project Connect is revolutionizing open-source collaboration by creating **viral, monetized communities** where **every contributor is equitably rewarded** for their impact.
+
+Traditional open-source projects struggle with sustainability and contributor retention. Project Connect solves these issues by building communities that naturally attract and retain contributors while generating sustainable revenue streams that fairly compensate everyone involved.
+
+**Website**: [https://didier1111.github.io/connect](https://didier1111.github.io/connect)
 
 ## About
 

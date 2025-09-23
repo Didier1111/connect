@@ -7,10 +7,10 @@
     <meta name="keywords" content="open source, trading, journal, challenges, revenue sharing, community, collaboration">
     <meta name="author" content="Project Connect Team">
     
-    <title>Project Connect - Open Source Trading Community</title>
+    <title>Project Connect - Viral Open Source Communities</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.ico">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,310 @@
     
     <!-- Custom CSS -->
     <link href="main.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        .hero h1 {
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.9);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-outline-light {
+            border-color: rgba(255,255,255,0.5);
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .feature-card h3 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .feature-card p {
+            text-align: center;
+            color: #666;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin: 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .incentive-card {
+            background: linear-gradient(135deg, #ffd89b, #19547b);
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+        
+        .incentive-card h3 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .tier-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+        
+        .bronze-tier { background: linear-gradient(135deg, #cd7f32, #8c5e2d); }
+        .silver-tier { background: linear-gradient(135deg, #c0c0c0, #8a8a8a); }
+        .gold-tier { background: linear-gradient(135deg, #ffd700, #daa520); }
+        .platinum-tier { background: linear-gradient(135deg, #e5e4e2, #a9a9a9); }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,26 +334,23 @@
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
-                </button>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#challenges">Challenges</a>
+                        <a class="nav-link" href="#incentives">Incentives</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#community">Community</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#docs">Documentation</a>
+                        <a class="nav-link" href="docs.html">Documentation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contribute">Contribute</a>
+                        <a class="nav-link" href="contribute.html">Contribute</a>
                     </li>
                 </ul>
             </div>
@@ -62,13 +363,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h1>Build Viral, Monetized Open Source Teams</h1>
-                    <p>Project Connect creates sustainable open-source communities with equitable remuneration for all contributors. Join our trading journal platform and earn through performance-based challenges.</p>
+                    <p>Project Connect creates sustainable open-source communities with equitable remuneration for all contributors.</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="#contribute" class="btn btn-primary btn-lg">
-                            <i class="fas fa-rocket me-2"></i>Get Started
+                        <a href="contribute.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-hands-helping me-2"></i>Start Contributing
                         </a>
-                        <a href="#features" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-play-circle me-2"></i>Learn More
+                        <a href="#incentives" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-dollar-sign me-2"></i>Earn Rewards
                         </a>
                     </div>
                 </div>
@@ -76,8 +377,8 @@
                     <div class="mt-4 mt-lg-0">
                         <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; backdrop-filter: blur(10px);">
                             <i class="fas fa-chart-line fa-5x mb-3"></i>
-                            <h3>Trading Journal Platform</h3>
-                            <p class="mb-0">Track performance, participate in challenges, and earn revenue share</p>
+                            <h3>Earn While You Contribute</h3>
+                            <p class="mb-0">Get paid for your open-source contributions with 5-20% revenue share</p>
                         </div>
                     </div>
                 </div>
@@ -91,8 +392,8 @@
             <div class="row">
                 <div class="col-md-3 col-6">
                     <div class="stat-item">
-                        <div class="stat-number">1000+</div>
-                        <div class="stat-label">Contributors</div>
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Active Contributors</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6">
@@ -183,108 +484,64 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="section bg-light">
+    <!-- Incentives Section -->
+    <section id="incentives" class="section bg-light">
         <div class="container">
             <div class="section-title">
-                <h2>How Project Connect Works</h2>
-                <p>Join our community in three simple steps</p>
+                <h2>Attractive Incentives</h2>
+                <p>Earn significant rewards while contributing to our growing community</p>
             </div>
+            
+            <div class="incentive-card">
+                <h3><i class="fas fa-star me-2"></i>Performance-Based Revenue Sharing</h3>
+                <p>Earn 5-20% revenue share based on your contributions and performance</p>
+                
+                <div class="d-flex flex-wrap justify-content-center">
+                    <span class="tier-badge bronze-tier">Bronze: 5% Share</span>
+                    <span class="tier-badge silver-tier">Silver: 10% Share</span>
+                    <span class="tier-badge gold-tier">Gold: 15% Share</span>
+                    <span class="tier-badge platinum-tier">Platinum: 20% Share</span>
+                </div>
+            </div>
+            
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: bold;">
-                            1
-                        </div>
-                        <h3>Join the Community</h3>
-                        <p>Sign up for free and become part of our growing open-source trading community.</p>
+                <div class="col-md-6 mb-4">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-trophy me-2"></i>Challenge Prizes</h3>
+                        <p>Compete in skill-based challenges with cash prizes</p>
+                        <ul class="text-start">
+                            <li><strong>Consistency Challenge</strong>: $500 prize pool</li>
+                            <li><strong>Risk Management Challenge</strong>: $1,000 prize pool</li>
+                            <li><strong>Adaptability Challenge</strong>: $2,000 prize pool</li>
+                            <li><strong>Strategy Mastery Challenge</strong>: $5,000+ prize pools</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: bold;">
-                            2
-                        </div>
-                        <h3>Track & Improve</h3>
-                        <p>Use our trading journal to track performance and participate in skill-building challenges.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="text-center">
-                        <div style="width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; font-size: 2rem; font-weight: bold;">
-                            3
-                        </div>
-                        <h3>Earn & Contribute</h3>
-                        <p>Earn revenue share based on performance and contribute to the open-source project.</p>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-gift me-2"></i>Monthly Bonuses</h3>
+                        <p>Additional rewards for top contributors</p>
+                        <ul class="text-start">
+                            <li><strong>Top 10 Contributors</strong>: $100-500 bonuses</li>
+                            <li><strong>Community Builders</strong>: Special recognition</li>
+                            <li><strong>Mentors</strong>: Additional rewards</li>
+                            <li><strong>Innovators</strong>: Patent sharing opportunities</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Challenges Section -->
-    <section id="challenges" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Challenges</h2>
-                <p>Prove your skills and earn rewards through our structured challenge system</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="feature-card">
-                        <h3><i class="fas fa-bullseye me-2"></i>Consistency Challenge</h3>
-                        <p>Maintain positive P&L for 30 consecutive days and earn up to $500 plus performance points.</p>
-                        <div class="d-flex justify-content-between mt-3">
-                            <span class="badge bg-primary">30 Days</span>
-                            <span class="badge bg-success">$500 Prize</span>
-                            <span class="badge bg-info">Beginner</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="feature-card">
-                        <h3><i class="fas fa-shield-alt me-2"></i>Risk Management Challenge</h3>
-                        <p>Achieve 15% return with <2% max drawdown over 60 days for up to $1,000 prize.</p>
-                        <div class="d-flex justify-content-between mt-3">
-                            <span class="badge bg-primary">60 Days</span>
-                            <span class="badge bg-success">$1,000 Prize</span>
-                            <span class="badge bg-warning">Intermediate</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="feature-card">
-                        <h3><i class="fas fa-sync-alt me-2"></i>Adaptability Challenge</h3>
-                        <p>Profit in all three market conditions over 90 days and win up to $2,000.</p>
-                        <div class="d-flex justify-content-between mt-3">
-                            <span class="badge bg-primary">90 Days</span>
-                            <span class="badge bg-success">$2,000 Prize</span>
-                            <span class="badge bg-danger">Advanced</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="feature-card">
-                        <h3><i class="fas fa-chess me-2"></i>Strategy Mastery Challenge</h3>
-                        <p>Demonstrate expertise in specific strategies with 5,000+ prize pool available.</p>
-                        <div class="d-flex justify-content-between mt-3">
-                            <span class="badge bg-primary">Variable</span>
-                            <span class="badge bg-success">$5,000 Prize</span>
-                            <span class="badge bg-danger">Expert</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary btn-lg">
-                    <i class="fas fa-external-link-alt me-2"></i>View All Challenges
+                <a href="contribute.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-rocket me-2"></i>Start Earning Today
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Community Section -->
-    <section id="community" class="section bg-light">
+    <section id="community" class="section">
         <div class="container">
             <div class="section-title">
                 <h2>Vibrant Community</h2>
@@ -322,10 +579,10 @@
             <h2>Ready to Join Project Connect?</h2>
             <p>Start your journey toward becoming a successful trader while contributing to open source and earning revenue share.</p>
             <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="#" class="btn btn-light btn-lg">
+                <a href="contribute.html" class="btn btn-light btn-lg">
                     <i class="fas fa-user-plus me-2"></i>Sign Up Free
                 </a>
-                <a href="#" class="btn btn-outline-light btn-lg">
+                <a href="docs.html" class="btn btn-outline-light btn-lg">
                     <i class="fas fa-book-reader me-2"></i>View Documentation
                 </a>
             </div>
@@ -358,7 +615,7 @@
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h4>Resources</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Documentation</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
                         <li><a href="#">Tutorials</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">API</a></li>
@@ -384,7 +641,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Project Connect. All rights reserved. This project is licensed under the MIT License.</p>
+                <p>&copy; 2025 Project Connect. This project is licensed under the MIT License.</p>
             </div>
         </div>
     </footer>
@@ -413,33 +670,6 @@
                 navbar.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
             }
         });
-        
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.feature-card, .section-title');
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = 1;
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        }
-        
-        // Set initial state for animation
-        document.querySelectorAll('.feature-card, .section-title').forEach(element => {
-            element.style.opacity = 0;
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        // Listen for scroll events
-        window.addEventListener('scroll', animateOnScroll);
-        
-        // Trigger once on load
-        window.addEventListener('load', animateOnScroll);
     </script>
 </body>
 </html>

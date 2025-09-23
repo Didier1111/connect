@@ -21,52 +21,128 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         .error-container {
             text-align: center;
             padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .error-code {
             font-size: 8rem;
             font-weight: 800;
-            color: var(--primary);
+            color: #667eea;
             margin-bottom: 1rem;
             line-height: 1;
+            text-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
         }
         
         .error-message {
-            font-size: 2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
             margin-bottom: 1.5rem;
-            color: var(--dark);
         }
         
         .error-description {
             font-size: 1.25rem;
-            margin-bottom: 2rem;
             color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #5a6fd8, #6a4ca3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-outline-primary {
+            border-color: #667eea;
+            color: #667eea;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-10">
                 <div class="error-container">
                     <div class="error-code">404</div>
                     <h1 class="error-message">Page Not Found</h1>
-                    <p class="error-description">Sorry, the page you're looking for doesn't exist or has been moved.</p>
+                    <p class="error-description">Sorry, the page you're looking for doesn't exist or has been moved. But don't worry, there's plenty to explore at Project Connect!</p>
+                    
                     <div class="d-flex flex-wrap justify-content-center gap-3">
                         <a href="index.html" class="btn btn-primary btn-lg">
                             <i class="fas fa-home me-2"></i>Go Home
                         </a>
-                        <a href="docs.html" class="btn btn-outline btn-lg">
+                        <a href="docs.html" class="btn btn-outline-primary btn-lg">
                             <i class="fas fa-book me-2"></i>View Documentation
                         </a>
-                        <a href="contribute.html" class="btn btn-outline btn-lg">
+                        <a href="contribute.html" class="btn btn-outline-primary btn-lg">
                             <i class="fas fa-hands-helping me-2"></i>Contribute
                         </a>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <h3 class="mb-4">Explore Project Connect</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-project-diagram fa-2x mb-3" style="color: #667eea;"></i>
+                                        <h5 class="card-title">Our Vision</h5>
+                                        <p class="card-text">Building viral, monetized open-source teams with equitable remuneration.</p>
+                                        <a href="index.html#vision" class="btn btn-sm btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-trophy fa-2x mb-3" style="color: #667eea;"></i>
+                                        <h5 class="card-title">Challenges</h5>
+                                        <p class="card-text">Participate in skill challenges with real rewards.</p>
+                                        <a href="index.html#challenges" class="btn btn-sm btn-primary">View Challenges</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-money-bill-wave fa-2x mb-3" style="color: #667eea;"></i>
+                                        <h5 class="card-title">Revenue Share</h5>
+                                        <p class="card-text">Earn 5-20% revenue share for your contributions.</p>
+                                        <a href="index.html#incentives" class="btn btn-sm btn-primary">See Incentives</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
