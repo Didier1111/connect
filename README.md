@@ -102,6 +102,7 @@ If you're interested in contributing to this vision, here's how to get involved:
 - [robots.txt](robots.txt) - Search engine directives
 - [sitemap.xml](sitemap.xml) - Site map for SEO
 - [favicon.ico](favicon.ico) - Website favicon
+- [GitHub Pages Setup Guide](GITHUB_PAGES_SETUP.md) - Instructions for enabling GitHub Pages
 
 ### ICT Trading Strategy
 - [ICT Liquidity Strategy](ICT_LIQUIDITY_STRATEGY.md) - Simple ICT-based trading approach
