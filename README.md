@@ -85,6 +85,21 @@ If you're interested in contributing to this vision, here's how to get involved:
 - [Collaborator Search Guide](COLLABORATOR_SEARCH.md) - Strategies for finding potential collaborators
 - [Good First Issues List](GOOD_FIRST_ISSUES.md) - List of issues suitable for newcomers
 
+### Trading Journal Platform
+- [Trading Journal Monetization](TRADING_JOURNAL_MONETIZATION.md) - Complete monetization framework
+- [Challenge Scoring System](CHALLENGE_SCORING_SYSTEM.md) - Detailed scoring algorithms and revenue sharing
+- [Platform Features](PLATFORM_FEATURES.md) - Comprehensive platform feature specifications
+- [Technical Architecture](TECHNICAL_ARCHITECTURE.md) - Scalable architecture and database schema
+- [Business Model](BUSINESS_MODEL.md) - Financial projections and funding requirements
+- [Implementation Roadmap](IMPLEMENTATION_ROADMAP.md) - Detailed 12-month development plan
+
+### ICT Trading Strategy
+- [ICT Liquidity Strategy](ICT_LIQUIDITY_STRATEGY.md) - Simple ICT-based trading approach
+- [ICT Journal Template](ICT_JOURNAL_TEMPLATE.md) - Comprehensive journal template
+- [Quick ICT Journal](QUICK_ICT_JOURNAL.md) - Simplified daily journal
+- [ICT Strategy Checklist](ICT_STRATEGY_CHECKLIST.md) - Implementation checklist
+- [ICT Challenge](ICT_CHALLENGE.md) - Structured trading challenge
+
 ## Contributing
 
 We welcome contributions from everyone! We're particularly interested in:
