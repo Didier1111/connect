@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Connect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem 0.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid #667eea;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .secondary-button {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .secondary-button:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #333;
+            color: white;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Project Connect</h1>
+        <p class="subtitle">Building viral, monetized open-source teams with equitable remuneration for all contributors</p>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Our Vision</h2>
+            <p>Traditional open-source projects struggle with sustainability and contributor retention. Project Connect is developing a replicable model that solves these issues by creating communities that naturally attract and retain contributors, implementing sustainable revenue streams, and ensuring all contributors are fairly compensated for their work.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Go Viral</h3>
+                    <p>Create communities that naturally attract and retain contributors through exceptional community building</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Generate Revenue</h3>
+                    <p>Implement sustainable monetization that supports the project and compensates contributors</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Equitable Rewards</h3>
+                    <p>Ensure all contributors are fairly compensated based on their impact and contributions</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/Didier1111/connect" class="cta-button">View on GitHub</a>
+                <a href="https://github.com/Didier1111/connect/issues" class="cta-button secondary-button">Contribute</a>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>How It Works</h2>
+            <h3>1. Community Building</h3>
+            <p>We've developed strategies for creating viral growth in open-source communities, focusing on inclusivity, mentorship, and meaningful contribution opportunities.</p>
+            
+            <h3>2. Monetization Framework</h3>
+            <p>Our model includes multiple revenue streams such as open core, SaaS offerings, support & consulting, enterprise licensing, and community-driven funding.</p>
+            
+            <h3>3. Equitable Remuneration</h3>
+            <p>We use transparent contribution tracking and fair revenue sharing models to ensure all contributors are appropriately rewarded for their work.</p>
+        </section>
+        
+        <section class="section">
+            <h2>Get Involved</h2>
+            <p>Project Connect is looking for collaborators in various areas:</p>
+            <ul>
+                <li><strong>Community Builders</strong> - Help design viral growth strategies</li>
+                <li><strong>Product Developers</strong> - Contribute to our frameworks and tools</li>
+                <li><strong>Business Strategists</strong> - Help refine our monetization approaches</li>
+                <li><strong>Governance Experts</strong> - Improve our equitable remuneration models</li>
+                <li><strong>Researchers</strong> - Study and document our progress</li>
+            </ul>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/Didier1111/connect/blob/main/CONTRIBUTING.md" class="cta-button">Contribution Guide</a>
+                <a href="https://github.com/Didier1111/connect/issues" class="cta-button secondary-button">Good First Issues</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Project Connect - Building the future of open-source collaboration</p>
+        <div class="social-links">
+            <a href="https://github.com/Didier1111/connect">GitHub</a>
+        </div>
+        <p>Made with ❤️ by the open-source community</p>
+    </footer>
+</body>
+</html>
