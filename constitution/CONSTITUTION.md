@@ -1,6 +1,6 @@
 # Project Connect Constitution
 
-This constitution establishes the fundamental principles and values that guide the development and operation of Project Connect and its extended platform features.
+This constitution establishes the fundamental principles and values that guide the development and operation of Project Connect and its Task Completion Agents platform.
 
 ## Core Mission
 

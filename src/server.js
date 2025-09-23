@@ -46,7 +46,7 @@ const taskSchema = new mongoose.Schema({
     startDate: Date,
     endDate: Date,
   },
-  status: { type: String, enum: ['pending', 'in_progress', 'completed', 'cancelled'] },
+  status: { type: String, enum: ['pending', 'inProgress', 'completed', 'cancelled'] },
   createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   createdAt: { type: Date, default: Date.now },
