@@ -7,7 +7,8 @@
     "scan-github": "node github-scanner.js",
     "scan-twitter": "node twitter-scanner.js",
     "daily-scan": "npm run scan-github && npm run scan-twitter",
-    "start-scheduler": "node recruitment-scheduler.js"
+    "start-scheduler": "node recruitment-scheduler.js",
+    "send-outreach": "node outreach-automation.js"
   },
   "keywords": [
     "recruitment",
@@ -21,6 +22,7 @@
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
     "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.7",
     "twitter-api-v2": "^1.15.0"
   },
   "devDependencies": {
