@@ -1,32 +1,31 @@
 {
-  "name": "project-connect-recruitment",
+  "name": "project-connect",
   "version": "1.0.0",
-  "description": "Automated recruitment tools for Project Connect",
-  "main": "github-scanner.js",
+  "description": "Project Connect - Viral, monetized open-source teams with equitable remuneration",
+  "main": "server.js",
   "scripts": {
-    "scan-github": "node github-scanner.js",
-    "scan-twitter": "node twitter-scanner.js",
-    "daily-scan": "npm run scan-github && npm run scan-twitter",
-    "start-scheduler": "node recruitment-scheduler.js",
-    "send-outreach": "node outreach-automation.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "serve": "concurrently \"npm run dev\" \"npx serve .\"",
+    "test": "node test-server.js"
   },
   "keywords": [
-    "recruitment",
-    "github",
-    "automation",
-    "open-source"
+    "trading",
+    "journal",
+    "open-source",
+    "community",
+    "revenue-sharing"
   ],
   "author": "Project Connect Team",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.6.0",
-    "dotenv": "^16.3.1",
-    "node-cron": "^3.0.2",
-    "nodemailer": "^6.9.7",
-    "twitter-api-v2": "^1.15.0"
+    "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "concurrently": "^8.2.0",
+    "supertest": "^6.3.3",
+    "jest": "^29.7.0"
   },
   "repository": {
     "type": "git",
