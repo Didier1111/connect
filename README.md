@@ -93,6 +93,16 @@ If you're interested in contributing to this vision, here's how to get involved:
 - [Business Model](BUSINESS_MODEL.md) - Financial projections and funding requirements
 - [Implementation Roadmap](IMPLEMENTATION_ROADMAP.md) - Detailed 12-month development plan
 
+### Website Files
+- [index.html](index.html) - Main landing page
+- [docs.html](docs.html) - Documentation page
+- [contribute.html](contribute.html) - Contribution page
+- [404.html](404.html) - Error page
+- [main.css](main.css) - Main stylesheet
+- [robots.txt](robots.txt) - Search engine directives
+- [sitemap.xml](sitemap.xml) - Site map for SEO
+- [favicon.ico](favicon.ico) - Website favicon
+
 ### ICT Trading Strategy
 - [ICT Liquidity Strategy](ICT_LIQUIDITY_STRATEGY.md) - Simple ICT-based trading approach
 - [ICT Journal Template](ICT_JOURNAL_TEMPLATE.md) - Comprehensive journal template

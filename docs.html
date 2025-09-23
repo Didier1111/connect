@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Connect Documentation - Trading Journal Platform, Challenges, and Revenue Sharing">
+    <title>Documentation - Project Connect</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link href="main.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f7fb;
+        }
+        
+        .sidebar {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 1.5rem;
+            height: calc(100vh - 100px);
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar .nav-link {
+            color: #666;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            margin-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar .nav-link:hover, 
+        .sidebar .nav-link.active {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary);
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .content-section pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        
+        .content-section code {
+            background: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0 0 1rem 0;
+        }
+        
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .card-link:hover .card {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-project-diagram me-2"></i>Project Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="docs.html">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Documentation</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3">
+                <div class="sidebar">
+                    <h5 class="mb-4">Documentation</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#overview">
+                                <i class="fas fa-home me-2"></i>Overview
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#getting-started">
+                                <i class="fas fa-rocket me-2"></i>Getting Started
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#trading-journal">
+                                <i class="fas fa-book me-2"></i>Trading Journal
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#challenges">
+                                <i class="fas fa-trophy me-2"></i>Challenges
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#revenue-sharing">
+                                <i class="fas fa-money-bill-wave me-2"></i>Revenue Sharing
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#api">
+                                <i class="fas fa-code me-2"></i>API Reference
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#community">
+                                <i class="fas fa-users me-2"></i>Community
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="col-lg-9">
+                <!-- Overview Section -->
+                <div id="overview" class="content-section">
+                    <h2><i class="fas fa-home me-2"></i>Project Overview</h2>
+                    <p>Project Connect is building the framework for viral, monetized open-source teams with equitable remuneration for all contributors. Our platform combines trading journal functionality with skill-based challenges and performance-based revenue sharing.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>Comprehensive trading journal platform</li>
+                                <li>Skill-based challenge system</li>
+                                <li>Performance-based revenue sharing</li>
+                                <li>Vibrant open-source community</li>
+                                <li>Educational resources and mentorship</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Target Audience</h3>
+                            <ul>
+                                <li>Retail traders looking to improve skills</li>
+                                <li>Trading educators and coaches</li>
+                                <li>Aspiring fund managers</li>
+                                <li>Open-source contributors</li>
+                                <li>Community builders</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Getting Started Section -->
+                <div id="getting-started" class="content-section">
+                    <h2><i class="fas fa-rocket me-2"></i>Getting Started</h2>
+                    <p>Get up and running with Project Connect in just a few simple steps.</p>
+                    
+                    <h3>1. Create an Account</h3>
+                    <p>Sign up for a free account on our platform to access all basic features.</p>
+                    <pre>GET /api/v1/users/register
+Content-Type: application/json
+
+{
+  "username": "your_username",
+  "email": "your_email@example.com",
+  "password": "your_secure_password"
+}</pre>
+                    
+                    <h3>2. Set Up Your Profile</h3>
+                    <p>Complete your profile with your trading experience and preferences.</p>
+                    
+                    <h3>3. Start Journaling</h3>
+                    <p>Begin logging your trades using our comprehensive journal system.</p>
+                    
+                    <h3>4. Join Challenges</h3>
+                    <p>Participate in skill-based challenges to prove your abilities and earn rewards.</p>
+                </div>
+
+                <!-- Trading Journal Section -->
+                <div id="trading-journal" class="content-section">
+                    <h2><i class="fas fa-book me-2"></i>Trading Journal</h2>
+                    <p>Our trading journal platform helps you track performance, analyze strategies, and improve your trading skills.</p>
+                    
+                    <h3>Core Features</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-edit text-primary me-2"></i>Trade Logging</h5>
+                                    <p class="card-text">Detailed entry and exit tracking with all relevant market information.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-chart-line text-success me-2"></i>Analytics</h5>
+                                    <p class="card-text">Advanced performance metrics and risk analysis tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-brain text-info me-2"></i>Strategy Analysis</h5>
+                                    <p class="card-text">Categorize trades by strategy and analyze performance by approach.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>API Endpoints</h3>
+                    <pre>// Create a new trade
+POST /api/v1/trades
+
+// Get all trades for user
+GET /api/v1/trades
+
+// Get specific trade
+GET /api/v1/trades/{id}
+
+// Update trade
+PUT /api/v1/trades/{id}
+
+// Delete trade
+DELETE /api/v1/trades/{id}</pre>
+                </div>
+
+                <!-- Challenges Section -->
+                <div id="challenges" class="content-section">
+                    <h2><i class="fas fa-trophy me-2"></i>Challenges</h2>
+                    <p>Our challenge system allows you to prove your trading skills and earn rewards based on performance.</p>
+                    
+                    <h3>Challenge Types</h3>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Consistency Challenge</h5>
+                                    <p class="card-text">Maintain positive P&L for 30 consecutive days.</p>
+                                    <span class="badge bg-primary">Duration: 30 days</span>
+                                    <span class="badge bg-success">Prize: $500</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Risk Management Challenge</h5>
+                                    <p class="card-text">Achieve 15% return with <2% max drawdown.</p>
+                                    <span class="badge bg-primary">Duration: 60 days</span>
+                                    <span class="badge bg-success">Prize: $1,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Adaptability Challenge</h5>
+                                    <p class="card-text">Profit in all three market conditions.</p>
+                                    <span class="badge bg-primary">Duration: 90 days</span>
+                                    <span class="badge bg-success">Prize: $2,000</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Strategy Mastery Challenge</h5>
+                                    <p class="card-text">Demonstrate expertise in specific strategies.</p>
+                                    <span class="badge bg-primary">Duration: Variable</span>
+                                    <span class="badge bg-success">Prize: $5,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Scoring System</h3>
+                    <p>Challenges are scored based on multiple criteria:</p>
+                    <ul>
+                        <li><strong>Profitability (30%)</strong>: Risk-adjusted returns</li>
+                        <li><strong>Consistency (25%)</strong>: Streak of positive periods</li>
+                        <li><strong>Risk Management (25%)</strong>: Drawdown control and position sizing</li>
+                        <li><strong>Adaptability (20%)</strong>: Performance across market conditions</li>
+                    </ul>
+                </div>
+
+                <!-- Revenue Sharing Section -->
+                <div id="revenue-sharing" class="content-section">
+                    <h2><i class="fas fa-money-bill-wave me-2"></i>Revenue Sharing</h2>
+                    <p>Earn a share of platform revenue through various sources with our equitable remuneration model.</p>
+                    
+                    <h3>Revenue Sources</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Affiliate Commissions</h4>
+                            <p>30-50% of affiliate commissions shared with top performers.</p>
+                            
+                            <h4>Educational Content Sales</h4>
+                            <p>20-30% of sales shared with content creators.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Marketplace Fees</h4>
+                            <p>15-25% of fees shared with top contributors.</p>
+                            
+                            <h4>Sponsored Challenges</h4>
+                            <p>40-60% of prize pools shared with winners.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Performance Tiers</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Points Required</th>
+                                    <th>Revenue Share</th>
+                                    <th>Benefits</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bronze</td>
+                                    <td>60-69</td>
+                                    <td>5%</td>
+                                    <td>Basic challenges, community recognition</td>
+                                </tr>
+                                <tr>
+                                    <td>Silver</td>
+                                    <td>70-79</td>
+                                    <td>10%</td>
+                                    <td>All standard challenges, priority support</td>
+                                </tr>
+                                <tr>
+                                    <td>Gold</td>
+                                    <td>80-89</td>
+                                    <td>15%</td>
+                                    <td>Premium challenges, coaching sessions</td>
+                                </tr>
+                                <tr>
+                                    <td>Platinum</td>
+                                    <td>90+</td>
+                                    <td>20%</td>
+                                    <td>All challenges, personal coach, featured status</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- API Reference Section -->
+                <div id="api" class="content-section">
+                    <h2><i class="fas fa-code me-2"></i>API Reference</h2>
+                    <p>Integrate with our platform using our comprehensive API.</p>
+                    
+                    <h3>Authentication</h3>
+                    <pre>// Obtain authentication token
+POST /api/v1/users/login
+Content-Type: application/json
+
+{
+  "email": "your_email@example.com",
+  "password": "your_password"
+}
+
+// Response
+{
+  "token": "your_jwt_token",
+  "expires_in": 3600
+}</pre>
+                    
+                    <h3>Rate Limiting</h3>
+                    <p>All API endpoints are rate limited to 1000 requests per hour per user.</p>
+                    
+                    <h3>Error Handling</h3>
+                    <pre>{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid input data",
+    "details": [
+      {
+        "field": "email",
+        "message": "Invalid email format"
+      }
+    ]
+  }
+}</pre>
+                </div>
+
+                <!-- Community Section -->
+                <div id="community" class="content-section">
+                    <h2><i class="fas fa-users me-2"></i>Community</h2>
+                    <p>Join our vibrant community of traders and open-source contributors.</p>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <a href="#" class="card-link">
+                                <div class="card text-center h-100">
+                                    <div class="card-body">
+                                        <i class="fas fa-comments fa-3x text-primary mb-3"></i>
+                                        <h5 class="card-title">Discussion Forums</h5>
+                                        <p class="card-text">Engage in strategy discussions and market analysis.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <a href="#" class="card-link">
+                                <div class="card text-center h-100">
+                                    <div class="card-body">
+                                        <i class="fas fa-graduation-cap fa-3x text-success mb-3"></i>
+                                        <h5 class="card-title">Mentorship Program</h5>
+                                        <p class="card-text">Connect with experienced traders for guidance.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <a href="#" class="card-link">
+                                <div class="card text-center h-100">
+                                    <div class="card-body">
+                                        <i class="fas fa-award fa-3x text-warning mb-3"></i>
+                                        <h5 class="card-title">Achievement System</h5>
+                                        <p class="card-text">Earn badges and recognition for contributions.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Project Connect</h5>
+                    <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">GitHub Repository</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Community Forum</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 Project Connect. This project is licensed under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update active sidebar link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.sidebar .nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

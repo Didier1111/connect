@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Placeholder</title>
+</head>
+<body>
+    <h1>Favicon Placeholder</h1>
+    <p>This is a placeholder for the favicon.ico file.</p>
+    <p>In a real implementation, you would create a proper 16x16 or 32x32 pixel ICO file.</p>
+</body>
+</html>

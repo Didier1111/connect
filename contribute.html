@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contribute to Project Connect - Open Source Trading Community">
+    <title>Contribute - Project Connect</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link href="main.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .contribute-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .contribute-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .contribute-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            color: white;
+            padding: 4rem 0;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-project-diagram me-2"></i>Project Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="docs.html">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contribute.html">Contribute</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Contribute to Project Connect</h1>
+                    <p class="lead mb-4">Join our community of developers, traders, and open-source enthusiasts. Help us build the future of equitable, monetized open-source collaboration.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#ways-to-contribute" class="btn btn-light btn-lg">
+                            <i class="fas fa-hands-helping me-2"></i>How to Contribute
+                        </a>
+                        <a href="https://github.com/Didier1111/connect" class="btn btn-outline-light btn-lg">
+                            <i class="fab fa-github me-2"></i>GitHub Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ways to Contribute -->
+    <section id="ways-to-contribute" class="container">
+        <div class="section-title text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Ways to Contribute</h2>
+            <p class="lead">There are many ways to contribute to Project Connect, regardless of your skills or experience level.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contribute-card text-center">
+                    <div class="contribute-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Development</h3>
+                    <p>Help build our trading journal platform, challenge system, and community features.</p>
+                    <ul class="text-start">
+                        <li>Frontend development (React)</li>
+                        <li>Backend development (Node.js)</li>
+                        <li>Database design</li>
+                        <li>API development</li>
+                    </ul>
+                    <a href="https://github.com/Didier1111/connect/issues" class="btn btn-primary">View Issues</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="contribute-card text-center">
+                    <div class="contribute-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Trading Strategy</h3>
+                    <p>Share your trading expertise and help develop our challenge scoring system.</p>
+                    <ul class="text-start">
+                        <li>Strategy development</li>
+                        <li>Backtesting and analysis</li>
+                        <li>Risk management</li>
+                        <li>Performance metrics</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="contribute-card text-center">
+                    <div class="contribute-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>Help grow our community and make Project Connect more accessible.</p>
+                    <ul class="text-start">
+                        <li>Community management</li>
+                        <li>Content creation</li>
+                        <li>User support</li>
+                        <li>Outreach and marketing</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get Involved</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="contribute-card text-center">
+                    <div class="contribute-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Documentation</h3>
+                    <p>Improve our documentation and help new contributors get started.</p>
+                    <ul class="text-start">
+                        <li>Technical documentation</li>
+                        <li>User guides</li>
+                        <li>Tutorials and examples</li>
+                        <li>Translation</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Contribute Docs</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="contribute-card text-center">
+                    <div class="contribute-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Design & UX</h3>
+                    <p>Help create an intuitive and beautiful user experience for our platform.</p>
+                    <ul class="text-start">
+                        <li>UI/UX design</li>
+                        <li>Graphic design</li>
+                        <li>Brand identity</li>
+                        <li>Accessibility</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Design Issues</a>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="contribute-card text-center">
+                    <div class="contribute-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education & Mentorship</h3>
+                    <p>Share your knowledge and help others learn trading and open-source skills.</p>
+                    <ul class="text-start">
+                        <li>Course creation</li>
+                        <li>Mentorship programs</li>
+                        <li>Webinar hosting</li>
+                        <li>Knowledge sharing</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Become a Mentor</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="container mt-5">
+        <div class="section-title text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Why Contribute?</h2>
+            <p class="lead">Contributing to Project Connect offers unique benefits and opportunities.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="benefit-card">
+                    <h3><i class="fas fa-money-bill-wave text-primary me-2"></i>Equitable Revenue Share</h3>
+                    <p>Earn a share of platform revenue based on your contributions. Top contributors can earn 5-20% revenue share.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3><i class="fas fa-graduation-cap text-success me-2"></i>Skill Development</h3>
+                    <p>Enhance your technical and trading skills while working on real-world projects with experienced professionals.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3><i class="fas fa-network-wired text-info me-2"></i>Professional Network</h3>
+                    <p>Connect with like-minded professionals and build relationships that can advance your career.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="benefit-card">
+                    <h3><i class="fas fa-trophy text-warning me-2"></i>Recognition & Achievement</h3>
+                    <p>Gain recognition for your contributions through our achievement system and community spotlight.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3><i class="fas fa-chart-line text-danger me-2"></i>Career Opportunities</h3>
+                    <p>Build a portfolio of work and gain experience that can lead to job opportunities in trading and tech.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3><i class="fas fa-heart text-primary me-2"></i>Meaningful Impact</h3>
+                    <p>Be part of creating a more equitable and sustainable model for open-source collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container mt-5">
+        <div class="section-title text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Contributor Stories</h2>
+            <p class="lead">Hear from our amazing contributors about their experience with Project Connect.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
+                            JD
+                        </div>
+                        <div>
+                            <h5 class="mb-0">John Developer</h5>
+                            <p class="text-muted mb-0">Frontend Developer</p>
+                        </div>
+                    </div>
+                    <p>"Contributing to Project Connect has been an incredible experience. I've learned so much about trading technology and earned revenue share for my work. The community is supportive and the mission is inspiring."</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <div style="width: 50px; height: 50px; background: #f093fb; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
+                            TS
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Trader Sarah</h5>
+                            <p class="text-muted mb-0">Professional Trader</p>
+                        </div>
+                    </div>
+                    <p>"As a trader, I never thought I'd contribute to open source. Project Connect showed me how my trading expertise could help build something amazing. The challenge system helped me improve my own performance too!"</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <div style="width: 50px; height: 50px; background: #764ba2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
+                            MC
+                        </div>
+                        <div>
+                            <h5 class="mb-0">Maria Community</h5>
+                            <p class="text-muted mb-0">Community Manager</p>
+                        </div>
+                    </div>
+                    <p>"Building the community around Project Connect has been rewarding beyond words. Seeing people connect, collaborate, and succeed together is what open source is all about. I've made lifelong connections here."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-3">Ready to Contribute?</h2>
+            <p class="lead mb-4">Join thousands of contributors building the future of open-source trading communities.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://github.com/Didier1111/connect" class="btn btn-light btn-lg">
+                    <i class="fab fa-github me-2"></i>View on GitHub
+                </a>
+                <a href="#" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-comments me-2"></i>Join Discord
+                </a>
+                <a href="#" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-book me-2"></i>Read Docs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="text-white"><i class="fas fa-project-diagram me-2"></i>Project Connect</h4>
+                    <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white-50"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-discord fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Platform</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Challenges</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">Tutorials</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Blog</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">API</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Team</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Careers</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">Privacy</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Terms</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Security</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary mt-4 pt-4">
+                <p>&copy; 2025 Project Connect. This project is licensed under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
