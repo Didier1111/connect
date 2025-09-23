@@ -6,7 +6,8 @@
   "scripts": {
     "scan-github": "node github-scanner.js",
     "scan-twitter": "node twitter-scanner.js",
-    "daily-scan": "npm run scan-github && npm run scan-twitter"
+    "daily-scan": "npm run scan-github && npm run scan-twitter",
+    "start-scheduler": "node recruitment-scheduler.js"
   },
   "keywords": [
     "recruitment",
@@ -19,6 +20,7 @@
   "dependencies": {
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
+    "node-cron": "^3.0.2",
     "twitter-api-v2": "^1.15.0"
   },
   "devDependencies": {
