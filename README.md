@@ -93,6 +93,14 @@ If you're interested in contributing to this vision, here's how to get involved:
 - [Business Model](BUSINESS_MODEL.md) - Financial projections and funding requirements
 - [Implementation Roadmap](IMPLEMENTATION_ROADMAP.md) - Detailed 12-month development plan
 
+### Spec Kit Implementation
+- [Spec Kit README](README_SPEC_KIT.md) - How to use GitHub Spec Kit with Project Connect
+- [Task Completion Agents API Specification](specifications/TASK_COMPLETION_AGENTS_API.md) - Complete API specification
+- [Project Constitution](constitution/CONSTITUTION.md) - Project principles and values
+- [Implementation Plan](plans/TASK_COMPLETION_AGENTS_IMPLEMENTATION.md) - 16-week development roadmap
+- [Initialization Scripts](initialize-spec-kit.sh) - Setup scripts for Spec Kit projects
+- [Server Implementation](src/server.js) - Basic API implementation
+
 ### Website Files
 - [index.html](index.html) - Main landing page
 - [docs.html](docs.html) - Documentation page
