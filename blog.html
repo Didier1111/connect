@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Connect Blog - Trading Strategies, Platform Updates, and Community News">
+    <title>Blog - Project Connect</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link href="main.css" rel="stylesheet">
+    
+    <style>
+        .blog-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-post-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .blog-post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .blog-post-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .blog-post-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-project-diagram me-2"></i>Project Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="docs.html">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contribute.html">Contribute</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold">Project Connect Blog</h1>
+                    <p class="lead">Insights on trading, open source, and community building</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Blog Post 1 -->
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="me-3"><i class="far fa-calendar me-1"></i> January 1, 2025</span>
+                            <span class="me-3"><i class="far fa-folder me-1"></i> Announcements</span>
+                            <span><i class="far fa-comment me-1"></i> 0 comments</span>
+                        </div>
+                        <h3><a href="blog-post-1.html" class="text-decoration-none">Introducing Project Connect</a></h3>
+                        <p>Learn about our ambitious initiative to build viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                        <a href="blog-post-1.html" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="me-3"><i class="far fa-calendar me-1"></i> January 5, 2025</span>
+                            <span class="me-3"><i class="far fa-folder me-1"></i> Trading Strategies</span>
+                            <span><i class="far fa-comment me-1"></i> 0 comments</span>
+                        </div>
+                        <h3><a href="#" class="text-decoration-none">Getting Started with ICT Concepts</a></h3>
+                        <p>Discover how Institutional Trading Concepts can improve your trading performance and decision-making process.</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="me-3"><i class="far fa-calendar me-1"></i> January 10, 2025</span>
+                            <span class="me-3"><i class="far fa-folder me-1"></i> Platform Updates</span>
+                            <span><i class="far fa-comment me-1"></i> 0 comments</span>
+                        </div>
+                        <h3><a href="#" class="text-decoration-none">Challenge-Based Learning Explained</a></h3>
+                        <p>Understand how our skill-based challenge system helps traders improve while earning rewards.</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <nav aria-label="Blog pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="sidebar-card">
+                    <h5>About Our Blog</h5>
+                    <p>Stay updated with the latest news, trading strategies, and platform developments from Project Connect.</p>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Announcements <span class="badge bg-secondary float-end">1</span></a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Trading Strategies <span class="badge bg-secondary float-end">5</span></a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Platform Updates <span class="badge bg-secondary float-end">3</span></a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Community <span class="badge bg-secondary float-end">2</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h5>Popular Posts</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <h6><a href="blog-post-1.html" class="text-decoration-none">Introducing Project Connect</a></h6>
+                            <small class="text-muted">January 1, 2025</small>
+                        </li>
+                        <li class="mb-3">
+                            <h6><a href="#" class="text-decoration-none">Getting Started with ICT Concepts</a></h6>
+                            <small class="text-muted">January 5, 2025</small>
+                        </li>
+                        <li class="mb-3">
+                            <h6><a href="#" class="text-decoration-none">Challenge-Based Learning Explained</a></h6>
+                            <small class="text-muted">January 10, 2025</small>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h5>Subscribe</h5>
+                    <p>Get notified when we publish new content.</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your email">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="text-white"><i class="fas fa-project-diagram me-2"></i>Project Connect</h4>
+                    <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Platform</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Challenges</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Tutorials</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">API</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Team</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Careers</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">Privacy</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Terms</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Security</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary mt-4 pt-4">
+                <p>&copy; 2025 Project Connect. This project is licensed under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
