@@ -1,25 +1,22 @@
 User-agent: *
-Disallow: 
+Allow: /
 
 Sitemap: https://didier1111.github.io/connect/sitemap.xml
 
-User-agent: Googlebot
-Allow: /
+# Crawl-delay: 10
 
-User-agent: Bingbot
-Allow: /
+# Directories
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
 
-User-agent: DuckDuckBot
-Allow: /
+# Files
+Disallow: /README.md
+Disallow: /LICENSE
+Disallow: /.git/
 
-User-agent: Baiduspider
-Disallow: /
+# Specific pages
+Disallow: /404.html
 
-User-agent: Yandex
-Disallow: /
-
-User-agent: Sogou
-Disallow: /
-
-User-agent: Exabot
-Disallow: /
+# Host
+Host: https://didier1111.github.io/connect/

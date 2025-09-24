@@ -37,6 +37,16 @@ Traditional open-source projects struggle with sustainability and contributor re
 3. **Equitable Rewards**: Ensuring all contributors are fairly compensated for their work
 4. **Scalable Governance**: Building flat, inclusive governance structures that scale
 
+## Our Website
+
+Visit our live website to learn more about Project Connect:
+- **Live Site**: [https://didier1111.github.io/connect](https://didier1111.github.io/connect)
+- **Documentation**: [https://didier1111.github.io/connect/docs.html](https://didier1111.github.io/connect/docs.html)
+- **Blog**: [https://didier1111.github.io/connect/blog.html](https://didier1111.github.io/connect/blog.html)
+- **Contribute**: [https://didier1111.github.io/connect/contribute.html](https://didier1111.github.io/connect/contribute.html)
+
+Our website showcases our comprehensive approach to building viral, monetized open-source teams with equitable remuneration for all contributors.
+
 ## Quick Start
 
 If you're interested in contributing to this vision, here's how to get involved:
@@ -58,6 +68,12 @@ If you're interested in contributing to this vision, here's how to get involved:
 2. Review our [Monetization Strategies](VIRAL_TEAMS_FRAMEWORK.md#2-monetization-strategies)
 3. Contact us about partnership opportunities
 4. Explore [GitHub Sponsors](https://github.com/sponsors/Didier1111) (coming soon)
+
+### For Website Visitors
+1. Visit our [Live Website](https://didier1111.github.io/connect)
+2. Explore our [Documentation](https://didier1111.github.io/connect/docs.html)
+3. Read our [Blog](https://didier1111.github.io/connect/blog.html)
+4. Learn how to [Contribute](https://didier1111.github.io/connect/contribute.html)
 
 ## Key Documents
 

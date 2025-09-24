@@ -2,6 +2,14 @@
 
 Welcome to Project Connect! We're excited to have you contribute to our mission of building viral, monetized open-source teams with equitable remuneration.
 
+## Visit Our Website
+
+Before diving in, check out our live website to get a better understanding of what we're building:
+- **Main Site**: [https://didier1111.github.io/connect](https://didier1111.github.io/connect)
+- **Documentation**: [https://didier1111.github.io/connect/docs.html](https://didier1111.github.io/connect/docs.html)
+- **Blog**: [https://didier1111.github.io/connect/blog.html](https://didier1111.github.io/connect/blog.html)
+- **Contribute**: [https://didier1111.github.io/connect/contribute.html](https://didier1111.github.io/connect/contribute.html)
+
 ## First Steps
 
 1. **Read the Basics**

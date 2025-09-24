@@ -7,6 +7,12 @@
       <priority>1.0</priority>
    </url>
    <url>
+      <loc>https://didier1111.github.io/connect/index.html</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
       <loc>https://didier1111.github.io/connect/docs.html</loc>
       <lastmod>2025-01-01</lastmod>
       <changefreq>monthly</changefreq>
@@ -16,12 +22,180 @@
       <loc>https://didier1111.github.io/connect/contribute.html</loc>
       <lastmod>2025-01-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/blog.html</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>weekly</changefreq>
       <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/contact.html</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
    </url>
    <url>
       <loc>https://didier1111.github.io/connect/404.html</loc>
       <lastmod>2025-01-01</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.1</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/blog-post-1.html</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/QUICK_START.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/VIRAL_TEAMS_FRAMEWORK.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/TRADING_JOURNAL_MONETIZATION.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/CHALLENGE_SCORING_SYSTEM.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/PLATFORM_FEATURES.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/TECHNICAL_ARCHITECTURE.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/BUSINESS_MODEL.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/IMPLEMENTATION_ROADMAP.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/ICT_LIQUIDITY_STRATEGY.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/ICT_JOURNAL_TEMPLATE.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/QUICK_ICT_JOURNAL.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/ICT_STRATEGY_CHECKLIST.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/ICT_CHALLENGE.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/AUTOMATED_RECRUITMENT.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/RECRUITMENT_TOOLS.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/SOCIAL_MEDIA_STRATEGY.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/COMMUNITY_MANAGEMENT.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/README_SPEC_KIT.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/DEVELOPMENT_ROADMAP.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/BLOCKCHAIN_CONTRACTS.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/RAPID_MONETIZATION.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/VIRAL_AFFILIATE_PRODUCTS.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/PARALLEL_DEVELOPMENT.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/IMPLEMENTATION_PLAN.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://didier1111.github.io/connect/ICT_LIQUIDITY_STRATEGY.md</loc>
+      <lastmod>2025-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
    </url>
 </urlset>

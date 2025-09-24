@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Project Connect - Get in touch with our team">
+    <title>Contact - Project Connect</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="main.css" rel="stylesheet">
+    
+    <style>
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .contact-info-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .form-control, .form-select {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+        
+        .alert {
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-project-diagram me-2"></i>Project Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="docs.html">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contribute.html">Contribute</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Get In Touch</h1>
+                    <p class="lead mb-4">Have questions or want to learn more about Project Connect? We'd love to hear from you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="contact-card">
+                    <h2 class="mb-4"><i class="fas fa-envelope me-2"></i>Send Us a Message</h2>
+                    
+                    <div id="successAlert" class="alert alert-success d-none" role="alert">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>Success!</strong> Your message has been sent successfully. We'll get back to you soon!
+                    </div>
+                    
+                    <div id="errorAlert" class="alert alert-danger d-none" role="alert">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        <strong>Error!</strong> There was a problem sending your message. Please try again.
+                    </div>
+                    
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select class="form-select" id="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="contribution">I want to contribute</option>
+                                <option value="partnership">Partnership opportunity</option>
+                                <option value="support">Technical support</option>
+                                <option value="feedback">Feedback or suggestions</option>
+                                <option value="general">General inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea class="form-control" id="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="newsletter">
+                            <label class="form-check-label" for="newsletter">Subscribe to our newsletter for updates</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="contact-info-card mb-4">
+                    <h3 class="mb-4"><i class="fas fa-info-circle me-2"></i>Contact Information</h3>
+                    
+                    <div class="mb-4">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Location</h5>
+                        <p>Remote Team<br>Global Community</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email</h5>
+                        <p>Use the contact form to reach us<br>We'll respond within 24 hours</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h5>Online Presence</h5>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="https://github.com/Didier1111/connect" class="text-white"><i class="fab fa-github fa-lg"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-discord fa-lg"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Response Time</h5>
+                        <p>We typically respond to all inquiries within 24 hours during business days.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <h3 class="mb-3"><i class="fas fa-question-circle me-2"></i>Frequently Asked Questions</h3>
+                    
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How do I get started contributing?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Read our <a href="QUICK_START.md" class="text-decoration-none">Quick Start Guide</a> and check out our <a href="https://github.com/Didier1111/connect/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="text-decoration-none">Good First Issues</a>.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How does the revenue sharing work?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Contributors earn 5-20% revenue share based on their performance and contributions. See our <a href="VIRAL_TEAMS_FRAMEWORK.md#3-equitable-rewards" class="text-decoration-none">Revenue Sharing Model</a> for details.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What skills are you looking for?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We need developers, designers, community managers, researchers, and anyone interested in open-source collaboration. See our <a href="CONTRIBUTING.md" class="text-decoration-none">Contributing Guide</a> for more information.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="text-white"><i class="fas fa-project-diagram me-2"></i>Project Connect</h4>
+                    <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Platform</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
+                        <li><a href="contribute.html" class="text-decoration-none text-white-50">Contribute</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Tutorials</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">API</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Team</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Careers</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">Privacy</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Terms</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Security</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary mt-4 pt-4">
+                <p>&copy; 2025 Project Connect. This project is licensed under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide previous alerts
+            document.getElementById('successAlert').classList.add('d-none');
+            document.getElementById('errorAlert').classList.add('d-none');
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                newsletter: document.getElementById('newsletter').checked
+            };
+            
+            // Disable submit button
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            
+            // Simulate form submission (in a real implementation, this would send to a backend)
+            setTimeout(function() {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                
+                // Show success message
+                document.getElementById('successAlert').classList.remove('d-none');
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Scroll to success message
+                document.getElementById('successAlert').scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

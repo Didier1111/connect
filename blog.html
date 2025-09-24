@@ -12,12 +12,38 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link href="main.css" rel="stylesheet">
     
     <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
         .blog-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 4rem 0;
             margin-bottom: 3rem;
@@ -25,22 +51,23 @@
         
         .blog-post-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             margin-bottom: 2rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
+            height: 100%;
         }
         
         .blog-post-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
         .blog-post-image {
             height: 200px;
-            background: linear-gradient(135deg, #667eea, #f093fb);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -49,7 +76,7 @@
         }
         
         .blog-post-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
         
         .blog-post-meta {
@@ -65,6 +92,35 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             margin-bottom: 1.5rem;
             border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .category-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .category-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .bronze-tier { background: linear-gradient(135deg, #cd7f32, #8c5e2d); color: white; }
+        .silver-tier { background: linear-gradient(135deg, #c0c0c0, #8a8a8a); color: black; }
+        .gold-tier { background: linear-gradient(135deg, #ffd700, #daa520); color: black; }
+        .platinum-tier { background: linear-gradient(135deg, #e5e4e2, #a9a9a9); color: black; }
+        
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 0 1.5rem;
         }
     </style>
 </head>
@@ -164,6 +220,40 @@
                     </div>
                 </div>
                 
+                <!-- Blog Post 4 -->
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="me-3"><i class="far fa-calendar me-1"></i> January 15, 2025</span>
+                            <span class="me-3"><i class="far fa-folder me-1"></i> Community</span>
+                            <span><i class="far fa-comment me-1"></i> 0 comments</span>
+                        </div>
+                        <h3><a href="#" class="text-decoration-none">Building Viral Open Source Communities</a></h3>
+                        <p>Learn how we're creating communities that naturally attract and retain contributors through exceptional value delivery.</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 5 -->
+                <div class="blog-post-card">
+                    <div class="blog-post-image">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="me-3"><i class="far fa-calendar me-1"></i> January 20, 2025</span>
+                            <span class="me-3"><i class="far fa-folder me-1"></i> Monetization</span>
+                            <span><i class="far fa-comment me-1"></i> 0 comments</span>
+                        </div>
+                        <h3><a href="#" class="text-decoration-none">Revenue Sharing: A New Model for Open Source</a></h3>
+                        <p>Discover how our equitable revenue sharing model transforms open source sustainability.</p>
+                        <a href="#" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+                
                 <!-- Pagination -->
                 <nav aria-label="Blog pagination">
                     <ul class="pagination justify-content-center">
@@ -241,14 +331,14 @@
                     <ul class="list-unstyled">
                         <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
                         <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Challenges</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Community</a></li>
+                        <li><a href="contribute.html" class="text-decoration-none text-white-50">Contribute</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="text-white">Resources</h5>
                     <ul class="list-unstyled">
-                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Tutorials</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">API</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Support</a></li>

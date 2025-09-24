@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contribute to Project Connect - Open Source Trading Community">
+    <meta name="description" content="Contribute to Project Connect - Earn while you contribute to open source">
     <title>Contribute - Project Connect</title>
     
     <!-- Bootstrap CSS -->
@@ -12,17 +12,40 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link href="main.css" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
         body {
+            font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .hero {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 4rem 0;
+            padding: 5rem 0;
             margin-bottom: 3rem;
         }
         
@@ -33,12 +56,12 @@
             margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            height: 100%;
             border: 1px solid rgba(0,0,0,0.05);
+            height: 100%;
         }
         
         .contribute-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
@@ -79,6 +102,35 @@
             border-radius: 15px;
             margin: 3rem 0;
         }
+        
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 0;
+        }
+        
+        .tier-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .tier-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .bronze-tier { background: linear-gradient(135deg, #cd7f32, #8c5e2d); }
+        .silver-tier { background: linear-gradient(135deg, #c0c0c0, #8a8a8a); }
+        .gold-tier { background: linear-gradient(135deg, #ffd700, #daa520); }
+        .platinum-tier { background: linear-gradient(135deg, #e5e4e2, #a9a9a9); }
     </style>
 </head>
 <body>
@@ -100,10 +152,10 @@
                         <a class="nav-link" href="docs.html">Documentation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Community</a>
+                        <a class="nav-link active" href="contribute.html">Contribute</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="contribute.html">Contribute</a>
+                        <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -116,7 +168,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <h1 class="display-4 fw-bold mb-3">Contribute to Project Connect</h1>
-                    <p class="lead mb-4">Join our community of developers, traders, and open-source enthusiasts. Help us build the future of equitable, monetized open-source collaboration.</p>
+                    <p class="lead mb-4">Join our community of developers, traders, and open-source enthusiasts. Help us build meaningful connections while earning equitable remuneration for your contributions.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#ways-to-contribute" class="btn btn-light btn-lg">
                             <i class="fas fa-hands-helping me-2"></i>How to Contribute
@@ -286,6 +338,51 @@
         </div>
     </section>
 
+    <!-- Revenue Sharing Tiers -->
+    <section class="container mt-5">
+        <div class="section-title text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Revenue Sharing Tiers</h2>
+            <p class="lead">Earn significant rewards based on your contributions and performance</p>
+        </div>
+        
+        <div class="text-center mb-4">
+            <div class="d-flex flex-wrap justify-content-center">
+                <span class="tier-badge bronze-tier">Bronze: 5% Share</span>
+                <span class="tier-badge silver-tier">Silver: 10% Share</span>
+                <span class="tier-badge gold-tier">Gold: 15% Share</span>
+                <span class="tier-badge platinum-tier">Platinum: 20% Share</span>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="contribute-card">
+                    <h3><i class="fas fa-trophy me-2"></i>Challenge Prizes</h3>
+                    <p>Compete in skill-based challenges with cash prizes</p>
+                    <ul>
+                        <li><strong>Consistency Challenge</strong>: $500 prize pool</li>
+                        <li><strong>Risk Management Challenge</strong>: $1,000 prize pool</li>
+                        <li><strong>Adaptability Challenge</strong>: $2,000 prize pool</li>
+                        <li><strong>Strategy Mastery Challenge</strong>: $5,000+ prize pools</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="contribute-card">
+                    <h3><i class="fas fa-gift me-2"></i>Monthly Bonuses</h3>
+                    <p>Additional rewards for top contributors</p>
+                    <ul>
+                        <li><strong>Top 10 Contributors</strong>: $100-500 bonuses</li>
+                        <li><strong>Community Builders</strong>: Special recognition</li>
+                        <li><strong>Mentors</strong>: Additional rewards</li>
+                        <li><strong>Innovators</strong>: Patent sharing opportunities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials -->
     <section class="container mt-5">
         <div class="section-title text-center mb-5">
@@ -353,7 +450,7 @@
                 <a href="#" class="btn btn-outline-light btn-lg">
                     <i class="fas fa-comments me-2"></i>Join Discord
                 </a>
-                <a href="#" class="btn btn-outline-light btn-lg">
+                <a href="docs.html" class="btn btn-outline-light btn-lg">
                     <i class="fas fa-book me-2"></i>Read Docs
                 </a>
             </div>
@@ -367,27 +464,21 @@
                 <div class="col-lg-4 mb-4">
                     <h4 class="text-white"><i class="fas fa-project-diagram me-2"></i>Project Connect</h4>
                     <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
-                    <div class="d-flex gap-3 mt-3">
-                        <a href="#" class="text-white-50"><i class="fab fa-github fa-lg"></i></a>
-                        <a href="#" class="text-white-50"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#" class="text-white-50"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="#" class="text-white-50"><i class="fab fa-discord fa-lg"></i></a>
-                    </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="text-white">Platform</h5>
                     <ul class="list-unstyled">
                         <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
                         <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Challenges</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Community</a></li>
+                        <li><a href="contribute.html" class="text-decoration-none text-white-50">Contribute</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="text-white">Resources</h5>
                     <ul class="list-unstyled">
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Tutorials</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Blog</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">API</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Support</a></li>
                     </ul>
@@ -398,7 +489,7 @@
                         <li><a href="#" class="text-decoration-none text-white-50">About</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Team</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Careers</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Contact</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-white-50">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">

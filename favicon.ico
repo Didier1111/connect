@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Favicon Placeholder</title>
+    <title>Favicon Generator</title>
 </head>
 <body>
-    <h1>Favicon Placeholder</h1>
-    <p>This is a placeholder for the favicon.ico file.</p>
-    <p>In a real implementation, you would create a proper 16x16 or 32x32 pixel ICO file.</p>
+    <h1>Project Connect Favicon</h1>
+    <p>This is a placeholder for the favicon.ico file. In a production environment, this would be a proper 16x16 or 32x32 pixel ICO file.</p>
+    
+    <h2>To create a proper favicon:</h2>
+    <ol>
+        <li>Create a 16x16 or 32x32 pixel icon with the Project Connect logo</li>
+        <li>Save as favicon.ico</li>
+        <li>Place in the root directory of the website</li>
+        <li>Reference in HTML with &lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;</li>
+    </ol>
+    
+    <p>For now, browsers will display a default favicon or use the first letter of the site name.</p>
 </body>
 </html>

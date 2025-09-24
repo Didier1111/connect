@@ -1,17 +1,9 @@
-# Blog Posts for Project Connect
-
-This directory contains blog posts for the Project Connect website.
-
-## Blog Post 1: Introducing Project Connect
-
-```html
-<!-- blog/introducing-project-connect.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Introducing Project Connect - A New Model for Open Source Trading Communities">
+    <meta name="description" content="Introducing Project Connect - Building viral, monetized open-source teams with equitable remuneration">
     <title>Introducing Project Connect - Project Connect Blog</title>
     
     <!-- Bootstrap CSS -->
@@ -20,12 +12,38 @@ This directory contains blog posts for the Project Connect website.
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Custom CSS -->
-    <link href="../main.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
     
     <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
         .blog-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 4rem 0;
             margin-bottom: 3rem;
@@ -33,30 +51,57 @@ This directory contains blog posts for the Project Connect website.
         
         .blog-content {
             background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             margin-bottom: 2rem;
-        }
-        
-        .blog-meta {
-            color: #666;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .blog-content img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin: 1.5rem 0;
         }
         
         .author-box {
             background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .sidebar-card {
+            background: white;
             border-radius: 10px;
             padding: 1.5rem;
-            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .related-post {
+            border-left: 3px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 0;
         }
     </style>
 </head>
@@ -64,7 +109,7 @@ This directory contains blog posts for the Project Connect website.
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">
+            <a class="navbar-brand" href="index.html">
                 <i class="fas fa-project-diagram me-2"></i>Project Connect
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -73,16 +118,16 @@ This directory contains blog posts for the Project Connect website.
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../docs.html">Documentation</a>
+                        <a class="nav-link" href="docs.html">Documentation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../contribute.html">Contribute</a>
+                        <a class="nav-link" href="contribute.html">Contribute</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Blog</a>
+                        <a class="nav-link active" href="blog.html">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -94,15 +139,22 @@ This directory contains blog posts for the Project Connect website.
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold">Introducing Project Connect</h1>
-                    <p class="lead">A New Model for Open Source Trading Communities</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a href="blog.html" class="text-white">Blog</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Introducing Project Connect</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-4 fw-bold mb-3">Introducing Project Connect</h1>
+                    <p class="lead mb-4">Building viral, monetized open-source teams with equitable remuneration for all contributors</p>
                     <div class="d-flex align-items-center">
-                        <div style="width: 50px; height: 50px; background: #f093fb; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
+                        <div style="width: 50px; height: 50px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
                             PC
                         </div>
                         <div>
-                            <h5 class="mb-0">Project Connect Team</h5>
-                            <p class="mb-0">January 1, 2025</p>
+                            <h5 class="mb-0 text-white">Project Connect Team</h5>
+                            <p class="mb-0 text-white-50">January 1, 2025</p>
                         </div>
                     </div>
                 </div>
@@ -115,16 +167,11 @@ This directory contains blog posts for the Project Connect website.
         <div class="row">
             <div class="col-lg-8">
                 <div class="blog-content">
-                    <div class="blog-meta">
-                        <span class="me-3"><i class="far fa-clock me-1"></i> 5 min read</span>
-                        <span class="me-3"><i class="far fa-folder me-1"></i> Announcements</span>
-                        <span><i class="far fa-comment me-1"></i> 0 comments</span>
-                    </div>
-                    
-                    <p>Today, we're excited to announce the launch of Project Connect, an ambitious initiative to build viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                    <p class="lead">Today, we're excited to announce the launch of Project Connect, an ambitious initiative to build viral, monetized open-source teams with equitable remuneration for all contributors.</p>
                     
                     <h2>The Problem We're Solving</h2>
-                    <p>Traditional open-source projects face significant challenges:</p>
+                    <p>Traditional open-source projects face significant challenges that hinder their long-term success:</p>
+                    
                     <ul>
                         <li><strong>Sustainability</strong>: Most projects struggle with long-term funding and maintenance</li>
                         <li><strong>Contributor Retention</strong>: Talented contributors often leave for paid opportunities</li>
@@ -139,36 +186,36 @@ This directory contains blog posts for the Project Connect website.
                         <div class="col-md-6 mb-3">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-virus fa-3x text-primary mb-3"></i>
-                                    <h5>Viral Growth</h5>
-                                    <p>Exceptional community building strategies</p>
+                                    <i class="fas fa-virus fa-3x mb-3" style="color: var(--primary);"></i>
+                                    <h5 class="card-title">Viral Growth</h5>
+                                    <p class="card-text">Exceptional community building strategies</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-money-bill-wave fa-3x text-success mb-3"></i>
-                                    <h5>Monetization</h5>
-                                    <p>Sustainable revenue streams</p>
+                                    <i class="fas fa-money-bill-wave fa-3x mb-3" style="color: var(--primary);"></i>
+                                    <h5 class="card-title">Monetization</h5>
+                                    <p class="card-text">Sustainable revenue streams</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-hand-holding-usd fa-3x text-info mb-3"></i>
-                                    <h5>Equitable Rewards</h5>
-                                    <p>Fair compensation for all contributors</p>
+                                    <i class="fas fa-hand-holding-usd fa-3x mb-3" style="color: var(--primary);"></i>
+                                    <h5 class="card-title">Equitable Rewards</h5>
+                                    <p class="card-text">Fair compensation for all contributors</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="card h-100">
                                 <div class="card-body text-center">
-                                    <i class="fas fa-users fa-3x text-warning mb-3"></i>
-                                    <h5>Thriving Communities</h5>
-                                    <p>Inclusive, diverse communities</p>
+                                    <i class="fas fa-users fa-3x mb-3" style="color: var(--primary);"></i>
+                                    <h5 class="card-title">Thriving Communities</h5>
+                                    <p class="card-text">Inclusive, diverse, and thriving communities</p>
                                 </div>
                             </div>
                         </div>
@@ -204,7 +251,7 @@ This directory contains blog posts for the Project Connect website.
                         <div class="col-md-4 mb-3">
                             <div class="text-center">
                                 <i class="fas fa-users fa-2x text-info mb-2"></i>
-                                <h5>Community</h5>
+                                <h5>Community Builders</h5>
                                 <p>Help build our contributor community</p>
                             </div>
                         </div>
@@ -216,12 +263,22 @@ This directory contains blog posts for the Project Connect website.
                     <p>If you're interested in being part of this journey, we'd love to have you join our community:</p>
                     
                     <div class="d-flex flex-wrap gap-3 mt-4">
-                        <a href="../contribute.html" class="btn btn-primary btn-lg">
-                            <i class="fas fa-hands-helping me-2"></i>Contribute
+                        <a href="contribute.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-user-plus me-2"></i>Sign Up Free
                         </a>
-                        <a href="https://github.com/Didier1111/connect" class="btn btn-outline-primary btn-lg">
-                            <i class="fab fa-github me-2"></i>GitHub
+                        <a href="docs.html" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-book me-2"></i>View Documentation
                         </a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5>Tags:</h5>
+                        <a href="#" class="tag">Open Source</a>
+                        <a href="#" class="tag">Trading</a>
+                        <a href="#" class="tag">Community</a>
+                        <a href="#" class="tag">Monetization</a>
+                        <a href="#" class="tag">Equitable Remuneration</a>
+                        <a href="#" class="tag">Viral Growth</a>
                     </div>
                 </div>
                 
@@ -234,65 +291,87 @@ This directory contains blog posts for the Project Connect website.
                             <h4>Project Connect Team</h4>
                             <p>We're a group of developers, traders, and open-source enthusiasts building sustainable communities.</p>
                             <div class="d-flex gap-2">
-                                <a href="#" class="text-decoration-none"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/Didier1111/connect" class="text-decoration-none"><i class="fab fa-github"></i></a>
                                 <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
                                 <a href="#" class="text-decoration-none"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Comments Section -->
+                <div class="blog-content">
+                    <h3><i class="fas fa-comments me-2"></i>Comments</h3>
+                    <p>Join the discussion! Share your thoughts on Project Connect.</p>
+                    
+                    <form>
+                        <div class="mb-3">
+                            <label for="commentName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="commentName" placeholder="Your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="commentEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="commentEmail" placeholder="Your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="commentText" class="form-label">Comment</label>
+                            <textarea class="form-control" id="commentText" rows="4" placeholder="Share your thoughts..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Post Comment</button>
+                    </form>
+                </div>
             </div>
             
             <div class="col-lg-4">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5>Recent Posts</h5>
+                <div class="sidebar-card">
+                    <h5><i class="fas fa-book me-2"></i>Recent Posts</h5>
+                    <div class="related-post">
+                        <h6><a href="#" class="text-decoration-none">Getting Started with ICT Concepts</a></h6>
+                        <small class="text-muted">January 5, 2025</small>
                     </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <h6><a href="#" class="text-decoration-none">Introducing Project Connect</a></h6>
-                                <small class="text-muted">January 1, 2025</small>
-                            </li>
-                            <li class="mb-3">
-                                <h6><a href="#" class="text-decoration-none">Getting Started with ICT Concepts</a></h6>
-                                <small class="text-muted">January 5, 2025</small>
-                            </li>
-                            <li class="mb-3">
-                                <h6><a href="#" class="text-decoration-none">Challenge-Based Learning Explained</a></h6>
-                                <small class="text-muted">January 10, 2025</small>
-                            </li>
-                        </ul>
+                    <div class="related-post">
+                        <h6><a href="#" class="text-decoration-none">Challenge-Based Learning Explained</a></h6>
+                        <small class="text-muted">January 10, 2025</small>
+                    </div>
+                    <div class="related-post">
+                        <h6><a href="#" class="text-decoration-none">Revenue Sharing Models</a></h6>
+                        <small class="text-muted">January 15, 2025</small>
                     </div>
                 </div>
                 
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5>Categories</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><a href="#" class="text-decoration-none">Announcements <span class="badge bg-secondary float-end">1</span></a></li>
-                            <li class="mb-2"><a href="#" class="text-decoration-none">Trading Strategies <span class="badge bg-secondary float-end">5</span></a></li>
-                            <li class="mb-2"><a href="#" class="text-decoration-none">Platform Updates <span class="badge bg-secondary float-end">3</span></a></li>
-                            <li class="mb-2"><a href="#" class="text-decoration-none">Community <span class="badge bg-secondary float-end">2</span></a></li>
-                        </ul>
+                <div class="sidebar-card">
+                    <h5><i class="fas fa-folder me-2"></i>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Announcements <span class="badge bg-secondary float-end">1</span></a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Trading Strategies <span class="badge bg-secondary float-end">5</span></a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Platform Updates <span class="badge bg-secondary float-end">3</span></a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none">Community <span class="badge bg-secondary float-end">2</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-card">
+                    <h5><i class="fas fa-tags me-2"></i>Popular Tags</h5>
+                    <div>
+                        <a href="#" class="tag">Open Source</a>
+                        <a href="#" class="tag">Trading</a>
+                        <a href="#" class="tag">Community</a>
+                        <a href="#" class="tag">Monetization</a>
+                        <a href="#" class="tag">Equitable Remuneration</a>
+                        <a href="#" class="tag">Viral Growth</a>
+                        <a href="#" class="tag">Challenges</a>
+                        <a href="#" class="tag">Revenue Sharing</a>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Subscribe</h5>
-                    </div>
-                    <div class="card-body">
-                        <p>Get notified when we publish new content.</p>
-                        <form>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Your email">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Subscribe</button>
-                        </form>
-                    </div>
+                <div class="sidebar-card">
+                    <h5><i class="fas fa-envelope me-2"></i>Subscribe</h5>
+                    <p>Get notified when we publish new content.</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your email">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -305,20 +384,26 @@ This directory contains blog posts for the Project Connect website.
                 <div class="col-lg-4 mb-4">
                     <h4 class="text-white"><i class="fas fa-project-diagram me-2"></i>Project Connect</h4>
                     <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://github.com/Didier1111/connect" class="text-white-50"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-discord fa-lg"></i></a>
+                    </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="text-white">Platform</h5>
                     <ul class="list-unstyled">
-                        <li><a href="../index.html" class="text-decoration-none text-white-50">Home</a></li>
-                        <li><a href="../docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Challenges</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Community</a></li>
+                        <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
+                        <li><a href="contribute.html" class="text-decoration-none text-white-50">Contribute</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="text-white">Resources</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-decoration-none text-white-50">Blog</a></li>
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Tutorials</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">API</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Support</a></li>
@@ -330,7 +415,7 @@ This directory contains blog posts for the Project Connect website.
                         <li><a href="#" class="text-decoration-none text-white-50">About</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Team</a></li>
                         <li><a href="#" class="text-decoration-none text-white-50">Careers</a></li>
-                        <li><a href="#" class="text-decoration-none text-white-50">Contact</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-white-50">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
@@ -351,5 +436,15 @@ This directory contains blog posts for the Project Connect website.
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your comment! In a real implementation, this would be submitted to our backend.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>

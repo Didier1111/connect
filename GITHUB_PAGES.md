@@ -1,4 +1,4 @@
-# GitHub Pages Configuration
+# GitHub Pages Configuration for Project Connect
 
 This document explains how to configure GitHub Pages for the Project Connect website.
 
