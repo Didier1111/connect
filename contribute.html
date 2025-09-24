@@ -56,8 +56,8 @@
             margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
             height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
         }
         
         .contribute-card:hover {
@@ -157,6 +157,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="blog.html">Blog</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -168,7 +171,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <h1 class="display-4 fw-bold mb-3">Contribute to Project Connect</h1>
-                    <p class="lead mb-4">Join our community of developers, traders, and open-source enthusiasts. Help us build meaningful connections while earning equitable remuneration for your contributions.</p>
+                    <p class="lead mb-4">Join our community of developers, traders, and open-source enthusiasts. Help us build meaningful connections while earning revenue share.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="#ways-to-contribute" class="btn btn-light btn-lg">
                             <i class="fas fa-hands-helping me-2"></i>How to Contribute
@@ -176,6 +179,47 @@
                         <a href="https://github.com/Didier1111/connect" class="btn btn-outline-light btn-lg">
                             <i class="fab fa-github me-2"></i>GitHub Repository
                         </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="mt-4 mt-lg-0">
+                        <div style="background: rgba(255,255,255,0.15); border-radius: 25px; padding: 2.5rem; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.2);">
+                            <i class="fas fa-chart-line fa-5x mb-4"></i>
+                            <h3 class="text-white">Earn While You Contribute</h3>
+                            <p class="text-white-50 mb-0">Get paid for your open-source contributions with 5-20% revenue share</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" id="contributorsCount">200+</div>
+                        <div class="stat-label">Active Contributors</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" id="revenueCount">$50K+</div>
+                        <div class="stat-label">Revenue Shared</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number" id="challengesCount">50+</div>
+                        <div class="stat-label">Active Challenges</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Community Support</div>
                     </div>
                 </div>
             </div>
@@ -188,107 +232,106 @@
             <h2 class="display-5 fw-bold mb-3">Ways to Contribute</h2>
             <p class="lead">There are many ways to contribute to Project Connect, regardless of your skills or experience level.</p>
         </div>
-        
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="contribute-card text-center">
                     <div class="contribute-icon">
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Code Development</h3>
                     <p>Help build our trading journal platform, challenge system, and community features.</p>
-                    <ul class="text-start">
+                    <ul class="text-start mt-3">
                         <li>Frontend development (React)</li>
                         <li>Backend development (Node.js)</li>
                         <li>Database design</li>
                         <li>API development</li>
                     </ul>
-                    <a href="https://github.com/Didier1111/connect/issues" class="btn btn-primary">View Issues</a>
+                    <a href="https://github.com/Didier1111/connect/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="btn btn-primary mt-3">View Issues</a>
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="contribute-card text-center">
                     <div class="contribute-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3>Trading Strategy</h3>
                     <p>Share your trading expertise and help develop our challenge scoring system.</p>
-                    <ul class="text-start">
+                    <ul class="text-start mt-3">
                         <li>Strategy development</li>
                         <li>Backtesting and analysis</li>
                         <li>Risk management</li>
                         <li>Performance metrics</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-primary mt-3">Learn More</a>
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="contribute-card text-center">
                     <div class="contribute-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Community Building</h3>
                     <p>Help grow our community and make Project Connect more accessible.</p>
-                    <ul class="text-start">
+                    <ul class="text-start mt-3">
                         <li>Community management</li>
                         <li>Content creation</li>
                         <li>User support</li>
                         <li>Outreach and marketing</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Get Involved</a>
+                    <a href="#" class="btn btn-primary mt-3">Get Involved</a>
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="contribute-card text-center">
                     <div class="contribute-icon">
                         <i class="fas fa-book"></i>
                     </div>
                     <h3>Documentation</h3>
                     <p>Improve our documentation and help new contributors get started.</p>
-                    <ul class="text-start">
+                    <ul class="text-start mt-3">
                         <li>Technical documentation</li>
                         <li>User guides</li>
                         <li>Tutorials and examples</li>
                         <li>Translation</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Contribute Docs</a>
+                    <a href="#" class="btn btn-primary mt-3">Contribute Docs</a>
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="contribute-card text-center">
                     <div class="contribute-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
                     <h3>Design & UX</h3>
                     <p>Help create an intuitive and beautiful user experience for our platform.</p>
-                    <ul class="text-start">
+                    <ul class="text-start mt-3">
                         <li>UI/UX design</li>
                         <li>Graphic design</li>
                         <li>Brand identity</li>
                         <li>Accessibility</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Design Issues</a>
+                    <a href="#" class="btn btn-primary mt-3">Design Issues</a>
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="contribute-card text-center">
                     <div class="contribute-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Education & Mentorship</h3>
                     <p>Share your knowledge and help others learn trading and open-source skills.</p>
-                    <ul class="text-start">
+                    <ul class="text-start mt-3">
                         <li>Course creation</li>
                         <li>Mentorship programs</li>
                         <li>Webinar hosting</li>
                         <li>Knowledge sharing</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Become a Mentor</a>
+                    <a href="#" class="btn btn-primary mt-3">Become a Mentor</a>
                 </div>
             </div>
         </div>
@@ -359,7 +402,7 @@
                 <div class="contribute-card">
                     <h3><i class="fas fa-trophy me-2"></i>Challenge Prizes</h3>
                     <p>Compete in skill-based challenges with cash prizes</p>
-                    <ul>
+                    <ul class="text-start mt-3">
                         <li><strong>Consistency Challenge</strong>: $500 prize pool</li>
                         <li><strong>Risk Management Challenge</strong>: $1,000 prize pool</li>
                         <li><strong>Adaptability Challenge</strong>: $2,000 prize pool</li>
@@ -372,7 +415,7 @@
                 <div class="contribute-card">
                     <h3><i class="fas fa-gift me-2"></i>Monthly Bonuses</h3>
                     <p>Additional rewards for top contributors</p>
-                    <ul>
+                    <ul class="text-start mt-3">
                         <li><strong>Top 10 Contributors</strong>: $100-500 bonuses</li>
                         <li><strong>Community Builders</strong>: Special recognition</li>
                         <li><strong>Mentors</strong>: Additional rewards</li>
@@ -380,6 +423,12 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="https://github.com/Didier1111/connect/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="btn btn-primary btn-lg">
+                <i class="fas fa-rocket me-2"></i>Start Contributing Today
+            </a>
         </div>
     </section>
 
@@ -391,7 +440,7 @@
         </div>
         
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="testimonial-card">
                     <div class="d-flex align-items-center mb-3">
                         <div style="width: 50px; height: 50px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
@@ -406,7 +455,7 @@
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="testimonial-card">
                     <div class="d-flex align-items-center mb-3">
                         <div style="width: 50px; height: 50px; background: #f093fb; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
@@ -421,7 +470,7 @@
                 </div>
             </div>
             
-            <div class="col-md-4">
+            <div class="col-md-4 mb-4">
                 <div class="testimonial-card">
                     <div class="d-flex align-items-center mb-3">
                         <div style="width: 50px; height: 50px; background: #764ba2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 15px;">
@@ -441,17 +490,14 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container text-center">
-            <h2 class="display-5 fw-bold mb-3">Ready to Contribute?</h2>
-            <p class="lead mb-4">Join thousands of contributors building the future of open-source trading communities.</p>
+            <h2 class="display-5 fw-bold mb-3">Ready to Join Project Connect?</h2>
+            <p class="lead mb-4">Start your journey toward becoming a successful contributor while earning revenue share and building open source.</p>
             <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="https://github.com/Didier1111/connect" class="btn btn-light btn-lg">
-                    <i class="fab fa-github me-2"></i>View on GitHub
-                </a>
-                <a href="#" class="btn btn-outline-light btn-lg">
-                    <i class="fas fa-comments me-2"></i>Join Discord
+                <a href="https://github.com/Didier1111/connect/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22" class="btn btn-light btn-lg">
+                    <i class="fas fa-user-plus me-2"></i>Start Contributing
                 </a>
                 <a href="docs.html" class="btn btn-outline-light btn-lg">
-                    <i class="fas fa-book me-2"></i>Read Docs
+                    <i class="fas fa-book-reader me-2"></i>View Documentation
                 </a>
             </div>
         </div>
@@ -464,6 +510,12 @@
                 <div class="col-lg-4 mb-4">
                     <h4 class="text-white"><i class="fas fa-project-diagram me-2"></i>Project Connect</h4>
                     <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://github.com/Didier1111/connect" class="text-white-50"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-discord fa-lg"></i></a>
+                    </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4">
                     <h5 class="text-white">Platform</h5>
@@ -510,5 +562,94 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'linear-gradient(135deg, #5a6fd8, #6a4ca3)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+            }
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Set initial state for animation
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Trigger once on load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Counter animation
+        function animateCounter(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value + (element.id === 'revenueCount' ? 'K+' : '+');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Initialize counters when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    if (id === 'contributorsCount') {
+                        animateCounter(entry.target, 0, 200, 2000);
+                    } else if (id === 'revenueCount') {
+                        animateCounter(entry.target, 0, 50, 2000);
+                    } else if (id === 'challengesCount') {
+                        animateCounter(entry.target, 0, 50, 2000);
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('#contributorsCount, #revenueCount, #challengesCount').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

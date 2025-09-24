@@ -44,6 +44,15 @@ Visit our live website to learn more about Project Connect:
 - **Documentation**: [https://didier1111.github.io/connect/docs.html](https://didier1111.github.io/connect/docs.html)
 - **Blog**: [https://didier1111.github.io/connect/blog.html](https://didier1111.github.io/connect/blog.html)
 - **Contribute**: [https://didier1111.github.io/connect/contribute.html](https://didier1111.github.io/connect/contribute.html)
+- **Contact**: [https://didier1111.github.io/connect/contact.html](https://didier1111.github.io/connect/contact.html)
+
+## Our Website
+
+Visit our live website to learn more about Project Connect:
+- **Live Site**: [https://didier1111.github.io/connect](https://didier1111.github.io/connect)
+- **Documentation**: [https://didier1111.github.io/connect/docs.html](https://didier1111.github.io/connect/docs.html)
+- **Blog**: [https://didier1111.github.io/connect/blog.html](https://didier1111.github.io/connect/blog.html)
+- **Contribute**: [https://didier1111.github.io/connect/contribute.html](https://didier1111.github.io/connect/contribute.html)
 
 Our website showcases our comprehensive approach to building viral, monetized open-source teams with equitable remuneration for all contributors.
 

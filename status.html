@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Connect Website Status - Current deployment and performance information">
+    <title>Status - Project Connect</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="main.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #17a2b8;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .status-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .status-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .status-operational {
+            background: var(--success);
+        }
+        
+        .status-partial {
+            background: var(--warning);
+        }
+        
+        .status-major {
+            background: var(--danger);
+        }
+        
+        .status-maintenance {
+            background: var(--info);
+        }
+        
+        .metric-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .uptime-indicator {
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .uptime-bar {
+            height: 100%;
+            background: var(--success);
+            border-radius: 4px;
+        }
+        
+        .incident-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--success);
+        }
+        
+        .incident-card.incident-major {
+            border-left-color: var(--danger);
+        }
+        
+        .incident-card.incident-minor {
+            border-left-color: var(--warning);
+        }
+        
+        .incident-card.incident-maintenance {
+            border-left-color: var(--info);
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-project-diagram me-2"></i>Project Connect
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="docs.html">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contribute.html">Contribute</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="status.html">Status</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Status Header -->
+    <section class="status-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Project Connect Status</h1>
+                    <p class="lead mb-4">Current deployment and performance information for the Project Connect website and services.</p>
+                    <div class="d-flex align-items-center">
+                        <span class="status-indicator status-operational"></span>
+                        <span class="fw-bold">All Systems Operational</span>
+                        <span class="mx-3">•</span>
+                        <span>Updated moments ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Status Content -->
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- System Status -->
+                <div class="status-card">
+                    <h2><i class="fas fa-server me-2"></i>System Status</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="status-indicator status-operational"></span>
+                                <div>
+                                    <h5 class="mb-0">Website</h5>
+                                    <small class="text-muted">https://didier1111.github.io/connect/</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="status-indicator status-operational"></span>
+                                <div>
+                                    <h5 class="mb-0">GitHub Pages</h5>
+                                    <small class="text-muted">Hosting service</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="status-indicator status-operational"></span>
+                                <div>
+                                    <h5 class="mb-0">Documentation</h5>
+                                    <small class="text-muted">API and user guides</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="status-indicator status-operational"></span>
+                                <div>
+                                    <h5 class="mb-0">Repository</h5>
+                                    <small class="text-muted">GitHub repository</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Performance Metrics -->
+                <div class="status-card">
+                    <h2><i class="fas fa-tachometer-alt me-2"></i>Performance Metrics</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="metric-card text-center">
+                                <i class="fas fa-bolt fa-2x mb-2" style="color: var(--primary);"></i>
+                                <h3>99.9%</h3>
+                                <p class="text-muted mb-0">Uptime</p>
+                                <div class="uptime-indicator">
+                                    <div class="uptime-bar" style="width: 99.9%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="metric-card text-center">
+                                <i class="fas fa-stopwatch fa-2x mb-2" style="color: var(--primary);"></i>
+                                <h3>< 2s</h3>
+                                <p class="text-muted mb-0">Avg. Response</p>
+                                <div class="uptime-indicator">
+                                    <div class="uptime-bar" style="width: 100%; background: var(--success);"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="metric-card text-center">
+                                <i class="fas fa-globe fa-2x mb-2" style="color: var(--primary);"></i>
+                                <h3>Global</h3>
+                                <p class="text-muted mb-0">CDN Coverage</p>
+                                <div class="uptime-indicator">
+                                    <div class="uptime-bar" style="width: 100%; background: var(--success);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Incidents -->
+                <div class="status-card">
+                    <h2><i class="fas fa-history me-2"></i>Recent Incidents</h2>
+                    
+                    <div class="incident-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Scheduled Maintenance</h5>
+                            <span class="badge bg-info">Resolved</span>
+                        </div>
+                        <p class="mb-2">Routine maintenance completed successfully with zero downtime.</p>
+                        <div class="d-flex text-muted">
+                            <small class="me-3"><i class="far fa-calendar me-1"></i> Jan 15, 2025</small>
+                            <small class="me-3"><i class="far fa-clock me-1"></i> 2 hours</small>
+                            <small><i class="fas fa-server me-1"></i> All Systems</small>
+                        </div>
+                    </div>
+                    
+                    <div class="incident-card incident-minor">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Minor Performance Degradation</h5>
+                            <span class="badge bg-warning">Resolved</span>
+                        </div>
+                        <p class="mb-2">Temporary slowdown in page load times resolved after CDN optimization.</p>
+                        <div class="d-flex text-muted">
+                            <small class="me-3"><i class="far fa-calendar me-1"></i> Jan 10, 2025</small>
+                            <small class="me-3"><i class="far fa-clock me-1"></i> 4 hours</small>
+                            <small><i class="fas fa-server me-1"></i> Website</small>
+                        </div>
+                    </div>
+                    
+                    <div class="incident-card">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0">Documentation Update</h5>
+                            <span class="badge bg-success">Completed</span>
+                        </div>
+                        <p class="mb-2">Added comprehensive documentation for trading journal platform and challenge system.</p>
+                        <div class="d-flex text-muted">
+                            <small class="me-3"><i class="far fa-calendar me-1"></i> Jan 5, 2025</small>
+                            <small class="me-3"><i class="far fa-clock me-1"></i> Ongoing</small>
+                            <small><i class="fas fa-server me-1"></i> Documentation</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Status Legend -->
+                <div class="status-card">
+                    <h3><i class="fas fa-key me-2"></i>Status Legend</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <span class="status-indicator status-operational"></span>
+                            <strong>Operational</strong> - System is working normally
+                        </li>
+                        <li class="mb-2">
+                            <span class="status-indicator status-partial"></span>
+                            <strong>Partial Outage</strong> - Some features affected
+                        </li>
+                        <li class="mb-2">
+                            <span class="status-indicator status-major"></span>
+                            <strong>Major Outage</strong> - System unavailable
+                        </li>
+                        <li>
+                            <span class="status-indicator status-maintenance"></span>
+                            <strong>Maintenance</strong> - Scheduled maintenance
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Subscribe -->
+                <div class="status-card">
+                    <h3><i class="fas fa-bell me-2"></i>Subscribe to Updates</h3>
+                    <p>Get notified when we have incidents or maintenance.</p>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your email">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+                    </form>
+                </div>
+                
+                <!-- Uptime History -->
+                <div class="status-card">
+                    <h3><i class="fas fa-chart-line me-2"></i>Uptime History</h3>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Last 30 Days</span>
+                        <span class="fw-bold">99.9%</span>
+                    </div>
+                    <div class="uptime-indicator">
+                        <div class="uptime-bar" style="width: 99.9%;"></div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <div class="text-center">
+                            <div class="fw-bold">99.8%</div>
+                            <small class="text-muted">Last Quarter</small>
+                        </div>
+                        <div class="text-center">
+                            <div class="fw-bold">99.7%</div>
+                            <small class="text-muted">Last Year</small>
+                        </div>
+                        <div class="text-center">
+                            <div class="fw-bold">100%</div>
+                            <small class="text-muted">Last Week</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="text-white"><i class="fas fa-project-diagram me-2"></i>Project Connect</h4>
+                    <p>Building viral, monetized open-source teams with equitable remuneration for all contributors.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="https://github.com/Didier1111/connect" class="text-white-50"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-white-50"><i class="fab fa-discord fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Platform</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
+                        <li><a href="contribute.html" class="text-decoration-none text-white-50">Contribute</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-white-50">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="docs.html" class="text-decoration-none text-white-50">Documentation</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Tutorials</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">API</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Support</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">About</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Team</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Careers</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-white-50">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5 class="text-white">Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white-50">Privacy</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Terms</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Security</a></li>
+                        <li><a href="#" class="text-decoration-none text-white-50">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center border-top border-secondary mt-4 pt-4">
+                <p>&copy; 2025 Project Connect. This project is licensed under the MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'linear-gradient(135deg, #5a6fd8, #6a4ca3)';
+            } else {
+                navbar.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+            }
+        });
+    </script>
+</body>
+</html>
