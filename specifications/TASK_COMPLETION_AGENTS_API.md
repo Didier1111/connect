@@ -70,34 +70,66 @@ The Task Completion Agents API provides endpoints for managing tasks, agents, co
 
 ### Contract
 - id: string (unique identifier)
-- task_id: string
-- contributor_id: string
-- agent_id: string
-- terms: object (payment_amount, payment_type, milestones)
+- taskId: string (reference to Task)
+- contributorId: string (reference to User)
+- agentId: string (reference to Agent)
+- terms: object {
+  - paymentAmount: number
+  - paymentType: enum (fixed, hourly, milestone)
+  - milestones: array of {
+    - description: string
+    - amount: number
+    - dueDate: date
+    - status: enum (pending, completed, overdue)
+  }
+}
 - status: enum (active, completed, cancelled)
-- created_at: datetime
-- updated_at: datetime
+- createdAt: datetime
+- updatedAt: datetime
 
 ### Payment
 - id: string (unique identifier)
-- contract_id: string
-- milestone_id: string
+- contractId: string (reference to Contract)
+- milestoneId: string
 - amount: number
-- currency: string
+- currency: string (default: USD)
 - method: enum (credit_card, paypal, bank_transfer, cryptocurrency)
 - status: enum (pending, completed, failed, refunded)
-- transaction_id: string
-- created_at: datetime
+- transactionId: string (auto-generated unique identifier)
+- processedAt: datetime (when payment was completed)
+- createdAt: datetime
 
 ## API Endpoints
 
 ### Authentication
-- POST /auth/login
-- POST /auth/register
+- POST /auth/login - Login with email and password
+- POST /auth/register - Register new user account
 
 ### Tasks
-- GET /tasks
-- POST /tasks
+- GET /tasks - List tasks with filters (status, category)
+- POST /tasks - Create new task
+- GET /tasks/:taskId - Get specific task by ID
+- PUT /tasks/:taskId - Update task (creator only)
+
+### Agents
+- GET /agents - List agents with filters (skills, rating, availability)
+- POST /agents - Register new agent
+- GET /agents/:agentId - Get specific agent by ID
+
+### Contracts
+- GET /contracts - List contracts with filters (status)
+- POST /contracts - Create new contract between contributor and agent
+- GET /contracts/:contractId - Get specific contract by ID
+- PUT /contracts/:contractId - Update contract (authorized users only)
+
+### Payments
+- GET /payments - List payments with filters (status, contractId)
+- POST /payments - Create new payment for contract milestone
+- GET /payments/:paymentId - Get specific payment by ID
+- PUT /payments/:paymentId - Update payment status
+
+### System
+- GET /health - API health check endpoint
 - GET /tasks/{task_id}
 - PUT /tasks/{task_id}
 - DELETE /tasks/{task_id}

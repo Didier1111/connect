@@ -14,11 +14,24 @@ const JWT_SECRET = process.env.JWT_SECRET || 'project-connect-secret';
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/task-agents', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// Connect to MongoDB with error handling
+const connectDB = async () => {
+  try {
+    const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/task-agents';
+    await mongoose.connect(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('✅ MongoDB connected successfully');
+  } catch (error) {
+    console.warn('⚠️  MongoDB connection failed:', error.message);
+    console.log('📝 Running in development mode without database');
+    console.log('💡 To use full functionality, install and start MongoDB locally');
+  }
+};
+
+// Initialize database connection
+connectDB();
 
 // Simple User Schema
 const userSchema = new mongoose.Schema({
@@ -70,6 +83,43 @@ const agentSchema = new mongoose.Schema({
 });
 
 const Agent = mongoose.model('Agent', agentSchema);
+
+// Contract Schema
+const contractSchema = new mongoose.Schema({
+  taskId: { type: mongoose.Schema.Types.ObjectId, ref: 'Task', required: true },
+  contributorId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  agentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Agent', required: true },
+  terms: {
+    paymentAmount: { type: Number, required: true },
+    paymentType: { type: String, enum: ['fixed', 'hourly', 'milestone'], default: 'fixed' },
+    milestones: [{
+      description: String,
+      amount: Number,
+      dueDate: Date,
+      status: { type: String, enum: ['pending', 'completed', 'overdue'], default: 'pending' }
+    }]
+  },
+  status: { type: String, enum: ['active', 'completed', 'cancelled'], default: 'active' },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
+});
+
+const Contract = mongoose.model('Contract', contractSchema);
+
+// Payment Schema
+const paymentSchema = new mongoose.Schema({
+  contractId: { type: mongoose.Schema.Types.ObjectId, ref: 'Contract', required: true },
+  milestoneId: { type: String },
+  amount: { type: Number, required: true },
+  currency: { type: String, default: 'USD' },
+  method: { type: String, enum: ['credit_card', 'paypal', 'bank_transfer', 'cryptocurrency'], required: true },
+  status: { type: String, enum: ['pending', 'completed', 'failed', 'refunded'], default: 'pending' },
+  transactionId: { type: String, unique: true },
+  processedAt: Date,
+  createdAt: { type: Date, default: Date.now }
+});
+
+const Payment = mongoose.model('Payment', paymentSchema);
 
 // Authentication middleware
 const authenticateToken = (req, res, next) => {
@@ -311,6 +361,189 @@ app.get('/agents/:agentId', authenticateToken, async (req, res) => {
     res.json(agent);
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Contract routes
+app.post('/contracts', authenticateToken, async (req, res) => {
+  try {
+    const contractData = {
+      ...req.body,
+      contributorId: req.user.userId,
+    };
+
+    const contract = new Contract(contractData);
+    await contract.save();
+
+    // Populate references
+    await contract.populate('taskId');
+    await contract.populate('contributorId', 'name email');
+    await contract.populate('agentId', 'name email');
+
+    res.status(201).json(contract);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.get('/contracts', authenticateToken, async (req, res) => {
+  try {
+    const { status, limit = 20, offset = 0 } = req.query;
+
+    const filter = {};
+    if (status) filter.status = status;
+
+    const contracts = await Contract.find(filter)
+      .populate('taskId', 'title description')
+      .populate('contributorId', 'name email')
+      .populate('agentId', 'name email')
+      .limit(parseInt(limit))
+      .skip(parseInt(offset))
+      .sort({ createdAt: -1 });
+
+    const total = await Contract.countDocuments(filter);
+
+    res.json({
+      contracts,
+      total,
+      limit: parseInt(limit),
+      offset: parseInt(offset),
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/contracts/:contractId', authenticateToken, async (req, res) => {
+  try {
+    const contract = await Contract.findById(req.params.contractId)
+      .populate('taskId', 'title description')
+      .populate('contributorId', 'name email')
+      .populate('agentId', 'name email');
+
+    if (!contract) {
+      return res.status(404).json({ error: 'Contract not found' });
+    }
+
+    res.json(contract);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.put('/contracts/:contractId', authenticateToken, async (req, res) => {
+  try {
+    const contract = await Contract.findById(req.params.contractId);
+
+    if (!contract) {
+      return res.status(404).json({ error: 'Contract not found' });
+    }
+
+    // Check if user is authorized to update contract
+    if (contract.contributorId.toString() !== req.user.userId && req.user.role !== 'admin') {
+      return res.status(403).json({ error: 'Not authorized to update this contract' });
+    }
+
+    // Update contract
+    Object.assign(contract, req.body);
+    contract.updatedAt = Date.now();
+    await contract.save();
+
+    // Populate references
+    await contract.populate('taskId', 'title description');
+    await contract.populate('contributorId', 'name email');
+    await contract.populate('agentId', 'name email');
+
+    res.json(contract);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Payment routes
+app.post('/payments', authenticateToken, async (req, res) => {
+  try {
+    const paymentData = {
+      ...req.body,
+      transactionId: 'TXN_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+    };
+
+    const payment = new Payment(paymentData);
+    await payment.save();
+
+    // Populate contract reference
+    await payment.populate('contractId');
+
+    res.status(201).json(payment);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.get('/payments', authenticateToken, async (req, res) => {
+  try {
+    const { status, contractId, limit = 20, offset = 0 } = req.query;
+
+    const filter = {};
+    if (status) filter.status = status;
+    if (contractId) filter.contractId = contractId;
+
+    const payments = await Payment.find(filter)
+      .populate('contractId')
+      .limit(parseInt(limit))
+      .skip(parseInt(offset))
+      .sort({ createdAt: -1 });
+
+    const total = await Payment.countDocuments(filter);
+
+    res.json({
+      payments,
+      total,
+      limit: parseInt(limit),
+      offset: parseInt(offset),
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/payments/:paymentId', authenticateToken, async (req, res) => {
+  try {
+    const payment = await Payment.findById(req.params.paymentId)
+      .populate('contractId');
+
+    if (!payment) {
+      return res.status(404).json({ error: 'Payment not found' });
+    }
+
+    res.json(payment);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.put('/payments/:paymentId', authenticateToken, async (req, res) => {
+  try {
+    const payment = await Payment.findById(req.params.paymentId);
+
+    if (!payment) {
+      return res.status(404).json({ error: 'Payment not found' });
+    }
+
+    // Update payment
+    Object.assign(payment, req.body);
+    if (req.body.status === 'completed') {
+      payment.processedAt = new Date();
+    }
+
+    await payment.save();
+
+    // Populate contract reference
+    await payment.populate('contractId');
+
+    res.json(payment);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
   }
 });
 

@@ -5,7 +5,11 @@
       "Bash(node:*)",
       "Bash(npm install)",
       "WebFetch(domain:didier1111.github.io)",
-      "Bash(./deploy-website.sh:*)"
+      "Bash(./deploy-website.sh:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(curl:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
