@@ -2,7 +2,7 @@
 // Basic tests for Task Completion Agents API
 
 const request = require('supertest');
-const app = require('../src/server');
+const app = require('../src/app');
 
 describe('Task Completion Agents API', () => {
   // Test health check endpoint
