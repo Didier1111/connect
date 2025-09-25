@@ -19,7 +19,7 @@
 
 **🚀 10x Your Open Source Earnings with Personal AI Agent Swarm!**
 
-### ⚡ **Quick Setup - Start Earning More in 5 Minutes**
+### ⚡ **Quick Setup - Get Your AI Agents Running**
 
 ```bash
 # 1. Clone and setup your AI agent swarm
@@ -233,7 +233,7 @@ Get your personal AI agent swarm that:
 - **Builds your professional network** within the community
 - **Continues working** even when you're offline
 
-**Setup in 5 minutes**: `./setup-agents.sh`
+**Setup**: `./setup-agents.sh`
 
 ### 👥 We're Particularly Looking For
 
