@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Connect Dashboard - Track your contributions, earnings, and performance">
+    <title>Dashboard - Project Connect</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.min.js"></script>
+
+    <!-- Dashboard Styles -->
+    <link href="dashboard-styles.css" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Top Navigation -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="index.html" class="nav-brand">
+                    <i class="fas fa-project-diagram"></i>
+                    Project Connect
+                </a>
+            </div>
+
+            <div class="nav-center">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search tasks, projects, or help...">
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <button class="nav-icon-btn notification-btn" aria-label="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+
+                <div class="user-menu" id="userMenu">
+                    <button class="user-avatar" aria-label="User menu">
+                        <img src="https://via.placeholder.com/40x40/2563eb/white?text=JD" alt="User avatar" id="userAvatarImg">
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="user-info">
+                            <div class="user-name" id="userName">John Doe</div>
+                            <div class="user-role" id="userRole">Senior Contributor</div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="#profile" class="dropdown-item">
+                            <i class="fas fa-user"></i>
+                            My Profile
+                        </a>
+                        <a href="#settings" class="dropdown-item">
+                            <i class="fas fa-cog"></i>
+                            Settings
+                        </a>
+                        <a href="#help" class="dropdown-item">
+                            <i class="fas fa-question-circle"></i>
+                            Help & Support
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="index.html" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sign Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-page="dashboard">
+                <i class="fas fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#profile" class="nav-item" data-page="profile">
+                <i class="fas fa-user"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="#earnings" class="nav-item" data-page="earnings">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Earnings</span>
+            </a>
+            <a href="#tasks" class="nav-item" data-page="tasks">
+                <i class="fas fa-tasks"></i>
+                <span>Tasks</span>
+            </a>
+            <a href="#analytics" class="nav-item" data-page="analytics">
+                <i class="fas fa-chart-bar"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="#challenges" class="nav-item" data-page="challenges">
+                <i class="fas fa-trophy"></i>
+                <span>Challenges</span>
+            </a>
+            <a href="#learning" class="nav-item" data-page="learning">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Learning</span>
+            </a>
+            <a href="#community" class="nav-item" data-page="community">
+                <i class="fas fa-users"></i>
+                <span>Community</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="tier-badge" id="userTier">
+                <i class="fas fa-crown"></i>
+                Gold Tier
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="#dashboard" class="bottom-nav-item active" data-page="dashboard">
+            <i class="fas fa-chart-pie"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="#tasks" class="bottom-nav-item" data-page="tasks">
+            <i class="fas fa-tasks"></i>
+            <span>Tasks</span>
+        </a>
+        <a href="#earnings" class="bottom-nav-item" data-page="earnings">
+            <i class="fas fa-dollar-sign"></i>
+            <span>Earnings</span>
+        </a>
+        <a href="#analytics" class="bottom-nav-item" data-page="analytics">
+            <i class="fas fa-chart-bar"></i>
+            <span>Analytics</span>
+        </a>
+        <a href="#profile" class="bottom-nav-item" data-page="profile">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="mainContent">
+        <!-- Dashboard Overview Page -->
+        <div class="page-content" id="dashboard-page">
+            <header class="page-header">
+                <div class="page-title">
+                    <h1>Welcome back, <span id="welcomeUserName">John</span>!</h1>
+                    <p>Here's what's happening with your contributions today</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Export Report
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        New Task
+                    </button>
+                </div>
+            </header>
+
+            <!-- Quick Stats -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon primary">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" data-value="2847">$0</div>
+                        <div class="stat-label">Total Earnings</div>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +12% this month
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon success">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" data-value="23">0</div>
+                        <div class="stat-label">Active Tasks</div>
+                        <div class="stat-trend neutral">
+                            <i class="fas fa-minus"></i>
+                            Same as last week
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon warning">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" data-value="94">0%</div>
+                        <div class="stat-label">Completion Rate</div>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +3% improvement
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon info">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" data-value="47">#0</div>
+                        <div class="stat-label">Global Rank</div>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +2 positions
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Content Grid -->
+            <div class="dashboard-grid">
+                <!-- Performance Chart -->
+                <section class="dashboard-card span-2">
+                    <header class="card-header">
+                        <h3>Performance Overview</h3>
+                        <div class="card-actions">
+                            <select class="period-selector" id="performancePeriod">
+                                <option value="7">Last 7 days</option>
+                                <option value="30" selected>Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                            </select>
+                        </div>
+                    </header>
+                    <div class="card-content">
+                        <canvas id="performanceChart" width="400" height="200"></canvas>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="dashboard-card">
+                    <header class="card-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="view-all-link">View All</a>
+                    </header>
+                    <div class="card-content">
+                        <div class="activity-list" id="activityList">
+                            <!-- Activity items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Upcoming Deadlines -->
+                <section class="dashboard-card">
+                    <header class="card-header">
+                        <h3>Upcoming Deadlines</h3>
+                        <button class="icon-btn" title="Refresh">
+                            <i class="fas fa-refresh"></i>
+                        </button>
+                    </header>
+                    <div class="card-content">
+                        <div class="deadline-list" id="deadlineList">
+                            <!-- Deadline items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Active Challenges -->
+                <section class="dashboard-card">
+                    <header class="card-header">
+                        <h3>Active Challenges</h3>
+                        <a href="#challenges" class="view-all-link">View All</a>
+                    </header>
+                    <div class="card-content">
+                        <div class="challenge-list" id="challengeList">
+                            <!-- Challenge items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Profile Page -->
+        <div class="page-content hidden" id="profile-page">
+            <header class="page-header">
+                <div class="page-title">
+                    <h1>My Profile</h1>
+                    <p>Manage your profile information and skills</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary" id="cancelProfileEdit">Cancel</button>
+                    <button class="btn btn-primary" id="saveProfile">Save Changes</button>
+                </div>
+            </header>
+
+            <div class="profile-grid">
+                <!-- Profile Information -->
+                <section class="profile-card">
+                    <header class="card-header">
+                        <h3>Profile Information</h3>
+                    </header>
+                    <div class="card-content">
+                        <div class="profile-photo-section">
+                            <div class="profile-photo">
+                                <img src="https://via.placeholder.com/120x120/2563eb/white?text=JD" alt="Profile photo" id="profilePhoto">
+                                <button class="photo-edit-btn" id="editPhotoBtn">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                        </div>
+
+                        <form class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" id="firstName" class="form-input" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" id="lastName" class="form-input" value="Doe">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" class="form-input" value="john.doe@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bio" class="form-label">Bio</label>
+                                <textarea id="bio" class="form-textarea" rows="4" placeholder="Tell us about yourself...">Passionate full-stack developer with 5+ years of experience in React, Node.js, and modern web technologies. Contributor to various open-source projects.</textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="location" class="form-label">Location</label>
+                                    <input type="text" id="location" class="form-input" value="San Francisco, CA">
+                                </div>
+                                <div class="form-group">
+                                    <label for="timezone" class="form-label">Timezone</label>
+                                    <select id="timezone" class="form-select">
+                                        <option value="PST">PST (UTC-8)</option>
+                                        <option value="EST">EST (UTC-5)</option>
+                                        <option value="GMT">GMT (UTC+0)</option>
+                                        <option value="CET">CET (UTC+1)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Skills & Expertise -->
+                <section class="profile-card">
+                    <header class="card-header">
+                        <h3>Skills & Expertise</h3>
+                        <button class="btn btn-sm btn-secondary" id="addSkillBtn">
+                            <i class="fas fa-plus"></i>
+                            Add Skill
+                        </button>
+                    </header>
+                    <div class="card-content">
+                        <div class="skills-grid" id="skillsGrid">
+                            <!-- Skills will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contribution Stats -->
+                <section class="profile-card span-2">
+                    <header class="card-header">
+                        <h3>Contribution History</h3>
+                        <div class="card-actions">
+                            <select class="period-selector">
+                                <option value="all">All Time</option>
+                                <option value="year">This Year</option>
+                                <option value="month">This Month</option>
+                            </select>
+                        </div>
+                    </header>
+                    <div class="card-content">
+                        <div class="contribution-timeline" id="contributionTimeline">
+                            <!-- Timeline will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Earnings Page -->
+        <div class="page-content hidden" id="earnings-page">
+            <header class="page-header">
+                <div class="page-title">
+                    <h1>Earnings & Revenue</h1>
+                    <p>Track your revenue share and earnings breakdown</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-file-export"></i>
+                        Export Data
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-credit-card"></i>
+                        Payment Settings
+                    </button>
+                </div>
+            </header>
+
+            <div class="earnings-grid">
+                <!-- Earnings Overview -->
+                <section class="earnings-card span-2">
+                    <header class="card-header">
+                        <h3>Earnings Overview</h3>
+                        <div class="tier-indicator" id="currentTier">
+                            <i class="fas fa-crown"></i>
+                            Gold Tier (15% Share)
+                        </div>
+                    </header>
+                    <div class="card-content">
+                        <div class="earnings-summary">
+                            <div class="earnings-stat">
+                                <div class="earnings-value">$2,847</div>
+                                <div class="earnings-label">Total Lifetime</div>
+                            </div>
+                            <div class="earnings-stat">
+                                <div class="earnings-value">$485</div>
+                                <div class="earnings-label">This Month</div>
+                            </div>
+                            <div class="earnings-stat">
+                                <div class="earnings-value">$125</div>
+                                <div class="earnings-label">This Week</div>
+                            </div>
+                            <div class="earnings-stat">
+                                <div class="earnings-value">Dec 15</div>
+                                <div class="earnings-label">Next Payout</div>
+                            </div>
+                        </div>
+                        <div class="earnings-chart-container">
+                            <canvas id="earningsChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Revenue Breakdown -->
+                <section class="earnings-card">
+                    <header class="card-header">
+                        <h3>Revenue Sources</h3>
+                    </header>
+                    <div class="card-content">
+                        <canvas id="revenueBreakdownChart" width="300" height="300"></canvas>
+                        <div class="revenue-legend">
+                            <div class="legend-item">
+                                <span class="legend-color challenges"></span>
+                                Challenges (45%)
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color projects"></span>
+                                Projects (35%)
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color bonuses"></span>
+                                Bonuses (20%)
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tier Progress -->
+                <section class="earnings-card">
+                    <header class="card-header">
+                        <h3>Tier Progress</h3>
+                    </header>
+                    <div class="card-content">
+                        <div class="tier-progress">
+                            <div class="current-tier">
+                                <div class="tier-badge gold">
+                                    <i class="fas fa-crown"></i>
+                                    Gold Tier
+                                </div>
+                                <div class="tier-share">15% Revenue Share</div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <div class="next-tier">
+                                <div class="tier-info">
+                                    <strong>250 points to Platinum</strong>
+                                    <span>20% Revenue Share</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Transaction History -->
+                <section class="earnings-card span-3">
+                    <header class="card-header">
+                        <h3>Transaction History</h3>
+                        <div class="card-actions">
+                            <input type="text" class="search-input-sm" placeholder="Search transactions...">
+                            <select class="filter-select">
+                                <option value="all">All Types</option>
+                                <option value="challenges">Challenges</option>
+                                <option value="projects">Projects</option>
+                                <option value="bonuses">Bonuses</option>
+                            </select>
+                        </div>
+                    </header>
+                    <div class="card-content">
+                        <div class="table-container">
+                            <table class="data-table" id="transactionsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Type</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="transactionsTableBody">
+                                    <!-- Transaction rows will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Other pages would follow similar structure... -->
+        <!-- Tasks, Analytics, Challenges, Learning, Community pages -->
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Modal Container -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal Title</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-content" id="modalContent">
+                <!-- Modal content will be populated dynamically -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <button class="btn btn-secondary" id="modalCancel">Cancel</button>
+                <button class="btn btn-primary" id="modalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toastContainer">
+        <!-- Toast notifications will be added here dynamically -->
+    </div>
+
+    <!-- JavaScript -->
+    <script src="dashboard-state.js"></script>
+    <script src="dashboard-charts.js"></script>
+    <script src="dashboard-components.js"></script>
+    <script src="dashboard-main.js"></script>
+</body>
+</html>
