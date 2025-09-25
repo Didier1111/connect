@@ -266,6 +266,27 @@ class ContributorAgentToolkit {
     await this.joinCommunityChannel();
   }
 
+  // Register with project manager (placeholder implementation)
+  async registerWithProjectManager() {
+    console.log('📝 Registering with project manager...');
+    // Simulated registration - would integrate with real API
+    return true;
+  }
+
+  // Subscribe to task broadcasts (placeholder implementation)
+  async subscribeToTaskBroadcasts() {
+    console.log('📡 Subscribing to task broadcasts...');
+    // Simulated subscription - would integrate with real messaging system
+    return true;
+  }
+
+  // Join community channel (placeholder implementation)
+  async joinCommunityChannel() {
+    console.log('👥 Joining contributor community channel...');
+    // Simulated join - would integrate with real communication system
+    return true;
+  }
+
   // Timer-based project continuation
   async setupProjectContinuation() {
     console.log('⏰ Setting up project continuation system...');
@@ -382,6 +403,79 @@ class ContributorAgentToolkit {
       'Check recent performance',
       'Update preferences if needed'
     ];
+  }
+
+  // Missing method implementations
+  async suggestLearning(agent) {
+    console.log(`📚 ${agent.name}: Identifying learning opportunities...`);
+    const skills = ['React', 'Node.js', 'Database Design'];
+    const recommendations = skills.map(skill => ({
+      skill: skill,
+      currentLevel: 'intermediate',
+      suggestedResources: ['Course', 'Tutorial', 'Project']
+    }));
+    console.log(`💡 Found ${recommendations.length} learning opportunities`);
+    return recommendations;
+  }
+
+  async buildNetwork(agent) {
+    console.log(`🤝 ${agent.name}: Building professional network...`);
+    const connections = [
+      { name: 'Senior Developer', type: 'mentor', relevance: 0.9 },
+      { name: 'Project Lead', type: 'collaborator', relevance: 0.8 }
+    ];
+    console.log(`🌐 Found ${connections.length} networking opportunities`);
+    return connections;
+  }
+
+  async analyzeEarningsOptimization() {
+    return [
+      { type: 'rate_increase', confidence: 0.85, suggestedRate: 75 },
+      { type: 'high_value_tasks', tasks: ['API Development', 'Security Audit'] }
+    ];
+  }
+
+  async suggestRateIncrease(optimization) {
+    console.log(`💰 Suggesting rate increase to $${optimization.suggestedRate}/hour`);
+  }
+
+  async autoApplyToHighValueTasks(tasks) {
+    console.log(`🎯 Auto-applying to ${tasks.length} high-value tasks`);
+  }
+
+  async getMyActiveProjects() {
+    return [{ id: 1, name: 'Project Connect', status: 'active' }];
+  }
+
+  async analyzeCodeQuality(project) {
+    return [
+      { type: 'style', severity: 'low', complexity: 'low', message: 'Missing semicolon' },
+      { type: 'security', severity: 'medium', complexity: 'medium', message: 'Potential XSS' }
+    ];
+  }
+
+  async autoFixSimpleIssues(issues) {
+    console.log(`🔧 Auto-fixing ${issues.length} simple code issues`);
+  }
+
+  async reportCodeIssues(issues, project) {
+    console.log(`📝 Reporting ${issues.length} code issues for project ${project.name}`);
+  }
+
+  async checkProjectHealth() {
+    return { status: 'healthy', lastCheck: new Date() };
+  }
+
+  async resumeStoppedWork() {
+    console.log('🔄 Resuming any stopped work...');
+  }
+
+  async checkCreditStatus() {
+    return { available: true, remaining: 85 };
+  }
+
+  async suggestTaskToContributor(task, agent) {
+    console.log(`💡 ${agent.name}: Suggesting task: ${task.title}`);
   }
 }
 

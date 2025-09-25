@@ -52,7 +52,7 @@ class ProjectContinuationSystem {
     } catch (error) {
       console.error('❌ Failed to initialize autonomous system:', error);
       this.systemStatus = 'error';
-      await this.handleSystemFailure(error);
+      await this.handleSystemError(error);
     }
   }
 
