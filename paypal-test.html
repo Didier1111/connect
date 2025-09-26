@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PayPal Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>PayPal Integration Test</h1>
+
+    <div style="max-width: 500px; margin: 2rem auto; padding: 2rem; border: 1px solid #ccc;">
+        <h3>Test Product: Website Template</h3>
+        <p><strong>Price:</strong> $597.00</p>
+        <p><strong>Description:</strong> Professional website with hosting</p>
+
+        <div id="paypal-button-container" style="margin-top: 2rem;"></div>
+
+        <div id="result-message" style="margin-top: 1rem; padding: 1rem; display: none;"></div>
+    </div>
+
+    <div style="max-width: 500px; margin: 2rem auto; padding: 1rem; background: #f9f9f9;">
+        <h4>Debug Info:</h4>
+        <p id="paypal-status">Checking PayPal SDK...</p>
+        <p id="console-log">Console messages will appear here</p>
+    </div>
+
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeA1QIjRwUecFGejOBbwrAJNF0-n0qXqnGlvmw6pT9fjXG1qfakTplyfvIqoAe2xW1hg8Xs4i6fJQ5T&currency=USD&intent=capture"></script>
+
+    <script>
+        // Debug logging
+        function log(message) {
+            console.log(message);
+            document.getElementById('console-log').innerHTML += '<br>' + message;
+        }
+
+        // Check PayPal SDK loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof paypal !== 'undefined') {
+                    document.getElementById('paypal-status').innerHTML = '✅ PayPal SDK loaded successfully';
+                    log('PayPal SDK is available');
+                    initPayPal();
+                } else {
+                    document.getElementById('paypal-status').innerHTML = '❌ PayPal SDK failed to load';
+                    log('ERROR: PayPal SDK not available');
+                }
+            }, 1000);
+        });
+
+        function initPayPal() {
+            log('Initializing PayPal buttons...');
+
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    log('Creating PayPal order...');
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '597.00',
+                                currency_code: 'USD'
+                            },
+                            description: 'Website Template - Professional Website (1 Year Hosting)'
+                        }]
+                    });
+                },
+
+                onApprove: function(data, actions) {
+                    log('Payment approved, capturing...');
+                    return actions.order.capture().then(function(details) {
+                        log('Payment successful! Transaction ID: ' + details.id);
+
+                        // Show success message
+                        const resultDiv = document.getElementById('result-message');
+                        resultDiv.style.display = 'block';
+                        resultDiv.style.background = '#d1fae5';
+                        resultDiv.style.color = '#065f46';
+                        resultDiv.innerHTML =
+                            '<h4>🎉 Payment Successful!</h4>' +
+                            '<p><strong>Transaction ID:</strong> ' + details.id + '</p>' +
+                            '<p><strong>Payer:</strong> ' + details.payer.name.given_name + ' ' + details.payer.name.surname + '</p>' +
+                            '<p><strong>Amount:</strong> $' + details.purchase_units[0].amount.value + '</p>';
+                    });
+                },
+
+                onError: function(err) {
+                    log('PayPal error: ' + err);
+                    const resultDiv = document.getElementById('result-message');
+                    resultDiv.style.display = 'block';
+                    resultDiv.style.background = '#fee2e2';
+                    resultDiv.style.color = '#991b1b';
+                    resultDiv.innerHTML = '<h4>❌ Payment Error</h4><p>' + err + '</p>';
+                },
+
+                onCancel: function(data) {
+                    log('Payment cancelled by user');
+                    const resultDiv = document.getElementById('result-message');
+                    resultDiv.style.display = 'block';
+                    resultDiv.style.background = '#fef3c7';
+                    resultDiv.style.color = '#92400e';
+                    resultDiv.innerHTML = '<h4>⚠️ Payment Cancelled</h4><p>You can try again anytime.</p>';
+                }
+
+            }).render('#paypal-button-container').then(function() {
+                log('✅ PayPal buttons rendered successfully');
+            }).catch(function(error) {
+                log('❌ PayPal button render failed: ' + error.message);
+                document.getElementById('paypal-button-container').innerHTML =
+                    '<div style="padding: 1rem; background: #fee2e2; color: #991b1b; border-radius: 0.5rem;">' +
+                    '<h4>PayPal Button Error</h4>' +
+                    '<p>Error: ' + error.message + '</p>' +
+                    '<p>Please check browser console for details.</p>' +
+                    '</div>';
+            });
+        }
+
+        // Capture console errors
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            log('JavaScript Error: ' + msg + ' at line ' + lineNo);
+            return false;
+        };
+    </script>
+</body>
+</html>

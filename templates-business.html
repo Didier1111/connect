@@ -993,7 +993,17 @@
             modal.style.display = 'flex';
 
             // Clear previous PayPal buttons
-            document.getElementById('paypal-button-container').innerHTML = '';
+            const container = document.getElementById('paypal-button-container');
+            container.innerHTML = '';
+
+            // Check if PayPal SDK is loaded
+            if (typeof paypal === 'undefined') {
+                container.innerHTML = '<div style="padding: 1rem; text-align: center; color: #ef4444;"><p>⚠️ PayPal is loading...</p><p>Please wait a moment and try again.</p><button onclick="location.reload()" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #2563eb; color: white; border: none; border-radius: 0.25rem; cursor: pointer;">Reload Page</button></div>';
+                return;
+            }
+
+            // Add loading indicator
+            container.innerHTML = '<div style="text-align: center; padding: 2rem;"><div style="border: 4px solid #f3f3f3; border-top: 4px solid #2563eb; border-radius: 50%; width: 40px; height: 40px; animation: spin 2s linear infinite; margin: 0 auto;"></div><p style="margin-top: 1rem;">Loading PayPal...</p></div><style>@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }</style>';
 
             // Initialize PayPal buttons
             paypal.Buttons({
@@ -1052,7 +1062,15 @@
                     console.log('PayPal payment cancelled:', data);
                     hidePayPalModal();
                 }
-            }).render('#paypal-button-container');
+            }).render('#paypal-button-container').catch(function(error) {
+                console.error('PayPal button render error:', error);
+                document.getElementById('paypal-button-container').innerHTML =
+                    '<div style="padding: 1rem; text-align: center; color: #ef4444;">' +
+                    '<p>❌ PayPal button failed to load</p>' +
+                    '<p style="font-size: 0.875rem; margin-top: 0.5rem;">Error: ' + error.message + '</p>' +
+                    '<button onclick="showPayPalModal()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #2563eb; color: white; border: none; border-radius: 0.25rem; cursor: pointer;">Try Again</button>' +
+                    '</div>';
+            });
         }
 
         // Hide PayPal payment modal
