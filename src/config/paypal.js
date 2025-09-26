@@ -16,87 +16,75 @@ const paypalConfig = {
     // Products configuration for website templates
     products: {
         dental_practice_pro: {
-            name: 'Dental Practice Pro Template',
+            name: 'Dental Practice Pro Website',
             price: 597.00,
             currency: 'USD',
-            description: 'Modern dental website with appointment booking, service showcase, and patient testimonials. Includes AI agent integration for lead optimization.',
+            description: 'Professional dental website fully hosted with custom domain. Includes appointment booking, service showcase, and patient testimonials. Live in 24 hours.',
             category: 'healthcare',
-            sku: 'TEMPLATE-DENTAL-001',
-            downloadFiles: [
-                'dental-practice-template.html',
-                'dental-practice-assets.zip',
-                'setup-instructions.pdf'
-            ],
-            features: [
+            sku: 'HOSTED-DENTAL-001',
+            hostedFeatures: [
+                'Custom domain name included',
+                'SSL certificate & security',
                 'Appointment booking system',
                 'Patient review integration',
-                'Service pricing display',
-                'AI-powered lead tracking',
                 'Mobile responsive design',
-                'SEO optimized'
+                'SEO optimized & managed hosting',
+                'Email setup included',
+                '24/7 uptime monitoring'
             ]
         },
         law_firm_authority: {
-            name: 'Law Firm Authority Template',
+            name: 'Law Firm Authority Website',
             price: 797.00,
             currency: 'USD',
-            description: 'Professional legal website with practice areas, case results, and consultation booking. AI agents optimize client conversion rates.',
+            description: 'Professional legal website fully hosted with custom domain. Includes practice areas, case results, and consultation booking. Live in 24 hours.',
             category: 'legal',
-            sku: 'TEMPLATE-LEGAL-001',
-            downloadFiles: [
-                'law-firm-template.html',
-                'law-firm-assets.zip',
-                'legal-compliance-guide.pdf'
-            ],
-            features: [
+            sku: 'HOSTED-LEGAL-001',
+            hostedFeatures: [
+                'Custom domain name included',
+                'SSL certificate & security',
                 'Practice area showcase',
-                'Attorney profiles',
+                'Attorney profile pages',
                 'Case result highlights',
-                'AI consultation optimizer',
-                'Professional credibility design',
-                'Lead capture forms'
+                'Lead capture & contact forms',
+                'Professional design',
+                '24/7 uptime monitoring'
             ]
         },
         elitestore_pro: {
-            name: 'EliteStore Pro E-commerce Template',
+            name: 'EliteStore Pro E-commerce Website',
             price: 997.00,
             currency: 'USD',
-            description: 'Complete e-commerce solution with shopping cart, payments, and inventory management. AI agents maximize conversion and sales.',
+            description: 'Complete e-commerce website fully hosted with custom domain. Includes shopping cart, payment processing, and inventory management. Live in 24 hours.',
             category: 'ecommerce',
-            sku: 'TEMPLATE-ECOM-001',
-            downloadFiles: [
-                'ecommerce-template.html',
-                'ecommerce-backend.zip',
-                'payment-setup-guide.pdf'
-            ],
-            features: [
+            sku: 'HOSTED-ECOM-001',
+            hostedFeatures: [
+                'Custom domain name included',
+                'SSL certificate & security',
                 'Shopping cart system',
-                'Payment integration',
-                'Product management',
-                'AI sales optimization',
-                'Inventory tracking',
-                'Customer analytics'
+                'Payment processing setup',
+                'Product catalog management',
+                'Inventory tracking system',
+                'Customer analytics dashboard',
+                '24/7 uptime monitoring'
             ]
         },
         cloudflow_saas: {
-            name: 'CloudFlow SaaS Template',
+            name: 'CloudFlow SaaS Website',
             price: 897.00,
             currency: 'USD',
-            description: 'Modern SaaS landing page with pricing tiers, feature highlights, and trial signup. AI agents optimize trial-to-paid conversion.',
+            description: 'Modern SaaS website fully hosted with custom domain. Includes pricing tiers, feature highlights, and trial signup. Live in 24 hours.',
             category: 'saas',
-            sku: 'TEMPLATE-SAAS-001',
-            downloadFiles: [
-                'saas-template.html',
-                'saas-dashboard.zip',
-                'subscription-integration.pdf'
-            ],
-            features: [
-                'Pricing table builder',
-                'Feature comparison',
-                'Free trial signup',
-                'AI conversion tracking',
-                'SaaS-specific design',
-                'Subscription management'
+            sku: 'HOSTED-SAAS-001',
+            hostedFeatures: [
+                'Custom domain name included',
+                'SSL certificate & security',
+                'Pricing table system',
+                'Feature comparison pages',
+                'Free trial signup forms',
+                'User dashboard interface',
+                'Subscription management',
+                '24/7 uptime monitoring'
             ]
         }
     },

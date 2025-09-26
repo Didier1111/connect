@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Website Templates - Ready-Made Business Websites</title>
-    <meta name="description" content="Professional website templates for dentists, lawyers, restaurants, e-commerce, and SaaS businesses. Ready to launch in 24 hours. Starting at $597.">
+    <title>Ready-Made Business Websites - Fully Hosted with Custom Domain</title>
+    <meta name="description" content="Get your professional business website live in 24 hours. Fully hosted, custom domain included, no technical setup required. Starting at $597/year."
+    <meta name="keywords" content="website templates, business websites, dental website, law firm website, e-commerce template, restaurant website, professional website design">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Premium Website Templates - Ready-Made Business Websites">
+    <meta property="og:description" content="Professional website templates for dentists, lawyers, restaurants, e-commerce, and SaaS businesses. Ready to launch in 24 hours.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/templates-business.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Premium Website Templates - Ready-Made Business Websites">
+    <meta name="twitter:description" content="Professional website templates ready to launch in 24 hours. Starting at $597.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <!-- Facebook Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+    /></noscript>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.ico">
@@ -602,8 +638,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Premium <span class="highlight">Website Templates</span><br>Ready in 24 Hours</h1>
-            <p>Professional website templates for dentists, lawyers, e-commerce stores, and SaaS businesses. Skip months of development and launch your business online tomorrow. Now integrated with Project Connect's AI agent system.</p>
+            <h1>Professional <span class="highlight">Business Websites</span><br>Fully Hosted & Live in 24 Hours</h1>
+            <p>Get your professional business website live with custom domain in 24 hours. Fully hosted, managed, and optimized. No technical setup required - we handle everything from domain registration to SSL certificates.</p>
 
             <div class="hero-buttons">
                 <a href="#templates" class="btn-primary">
@@ -898,11 +934,47 @@
                 const templateName = this.dataset.template;
                 const price = this.dataset.price;
 
-                // Show purchase modal or redirect to Stripe Checkout
-                if (confirm(`Ready to purchase ${templateName} for $${price}?\n\nThis will redirect you to our secure payment processor.\n\nYour template will be delivered within 24 hours along with AI agent setup instructions.`)) {
-                    // Here you would integrate with your Stripe payment system
-                    // For now, show instructions
-                    alert(`Payment integration would be implemented here!\n\nFor ${templateName} ($${price}):\n\n1. Stripe Checkout would open\n2. Secure payment processing\n3. Automatic template delivery\n4. AI agent setup included\n\nContact: templates@projectconnect.dev`);
+                // Track conversion event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'begin_checkout', {
+                        currency: 'USD',
+                        value: parseFloat(price),
+                        items: [{
+                            item_name: templateName,
+                            category: 'Website Template',
+                            quantity: 1,
+                            price: parseFloat(price)
+                        }]
+                    });
+                }
+
+                // Facebook Pixel tracking
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'InitiateCheckout', {
+                        value: parseFloat(price),
+                        currency: 'USD',
+                        content_name: templateName
+                    });
+                }
+
+                // Show purchase modal or redirect to PayPal Checkout
+                if (confirm(`Ready to get your ${templateName} website live for $${price}/year?\n\nThis will redirect you to our secure PayPal payment processor.\n\nYour website will be live with custom domain within 24 hours - fully hosted and managed.`)) {
+                    // Track purchase intent
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'add_to_cart', {
+                            currency: 'USD',
+                            value: parseFloat(price),
+                            items: [{
+                                item_name: templateName,
+                                category: 'Website Template',
+                                quantity: 1,
+                                price: parseFloat(price)
+                            }]
+                        });
+                    }
+
+                    // Redirect to PayPal or show PayPal modal
+                    window.location.href = `#paypal-checkout-${templateName.toLowerCase().replace(/\s+/g, '-')}`;
                 }
             });
         });
