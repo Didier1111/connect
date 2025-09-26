@@ -908,8 +908,8 @@
     <script>
         // PayPal configuration
         const PAYPAL_CONFIG = {
-            // Your PayPal Business Email: jsjgaza@gmail.com
-            businessEmail: 'jsjgaza@gmail.com',
+            // PayPal Business Email (set via environment variable)
+            businessEmail: process.env.PAYPAL_BUSINESS_EMAIL || 'business@example.com',
             currency: 'USD',
             environment: 'sandbox' // Change to 'production' when ready to go live
         };

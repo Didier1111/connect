@@ -2,7 +2,7 @@
 
 ## 🎯 Revenue Generation System Status: READY
 
-**Your Business Email:** jsjgaza@gmail.com
+**Your Business Email:** [Set via environment variable]
 **Revenue Share:** 20% (Diamond Level - Automatic)
 **Target:** $1,500-$7,500 monthly earnings
 
@@ -21,7 +21,7 @@
 - ✅ Mobile-responsive design
 
 **Your Next Steps:**
-1. Set up PayPal Business account (jsjgaza@gmail.com)
+1. Set up PayPal Business account (use your business email)
 2. Get PayPal API credentials from developer portal
 3. Replace `GA_MEASUREMENT_ID` and `YOUR_PIXEL_ID` placeholders
 4. Choose domain name and hosting provider
