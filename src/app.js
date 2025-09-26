@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files (HTML, CSS, JS) from project root
 app.use(express.static('./', {
   extensions: ['html', 'css', 'js', 'png', 'jpg', 'svg', 'ico'],
-  index: ['index.html', 'templates-business.html']
+  index: ['index.html']
 }));
 
 // Connect to MongoDB with error handling (only if not in test environment)
