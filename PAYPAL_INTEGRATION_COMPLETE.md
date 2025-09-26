@@ -80,7 +80,7 @@ Your website now has **fully functional PayPal payment processing** with real ch
 ```env
 PAYPAL_CLIENT_ID=your-live-client-id
 PAYPAL_MODE=production
-PAYPAL_BUSINESS_EMAIL=jsjgaza@gmail.com
+PAYPAL_BUSINESS_EMAIL=your-business-email@example.com
 ```
 
 ### **3. Update HTML File:**

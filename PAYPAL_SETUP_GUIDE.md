@@ -2,7 +2,7 @@
 
 ## 🚀 Complete Setup Instructions for Your PayPal Business
 
-**Your PayPal Business Email:** jsjgaza@gmail.com
+**Your PayPal Business Email:** your-business-email@example.com
 
 ---
 
@@ -16,7 +16,7 @@
    - Choose "Business Account"
 
 2. **Account Information:**
-   - Email: **jsjgaza@gmail.com**
+   - Email: **your-business-email@example.com**
    - Business Type: **Online Services**
    - Business Category: **Web Development/Templates**
    - Business Name: **Project Connect Templates**
@@ -30,7 +30,7 @@
 
 1. **Go to PayPal Developer Portal:**
    - Visit: https://developer.paypal.com/
-   - Log in with your jsjgaza@gmail.com account
+   - Log in with your your-business-email@example.com account
 
 2. **Create Application:**
    - Click "Create App"
@@ -69,7 +69,7 @@
    PAYPAL_ENVIRONMENT=sandbox  # Change to 'live' for production
 
    # Business Configuration
-   PAYPAL_BUSINESS_EMAIL=jsjgaza@gmail.com
+   PAYPAL_BUSINESS_EMAIL=your-business-email@example.com
    BASE_URL=https://yourdomain.com
    ```
 
@@ -111,7 +111,7 @@ Your payment of ${{amount}} has been processed successfully.
 3. Upload files to your web hosting provider
 
 💡 **Need Help?**
-- Email: jsjgaza@gmail.com
+- Email: your-business-email@example.com
 - Response time: Within 24 hours
 - Free setup assistance included
 
@@ -133,7 +133,7 @@ P.S. Don't forget to set up your AI agents for continuous optimization!
    # Email Configuration
    SMTP_HOST=smtp.gmail.com
    SMTP_PORT=587
-   SMTP_USER=jsjgaza@gmail.com
+   SMTP_USER=your-business-email@example.com
    SMTP_PASS=your-app-password-here
    ```
 
@@ -241,7 +241,7 @@ Create these pages on your website:
 
 **Contact for Setup Help:**
 - Technical: Continue working with Claude Code
-- Business: jsjgaza@gmail.com
+- Business: your-business-email@example.com
 - PayPal Issues: PayPal Merchant Support
 
 **Immediate Next Steps:**
