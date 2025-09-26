@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network & PayPal Connectivity Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { background: #d1fae5; border-color: #10b981; }
+        .error { background: #fee2e2; border-color: #ef4444; }
+        .loading { background: #fef3c7; border-color: #f59e0b; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Network & PayPal Connectivity Test</h1>
+
+    <div class="test loading" id="test1">
+        <h3>Test 1: Internet Connectivity</h3>
+        <p id="test1-result">Testing...</p>
+    </div>
+
+    <div class="test loading" id="test2">
+        <h3>Test 2: PayPal Domain Access</h3>
+        <p id="test2-result">Testing...</p>
+    </div>
+
+    <div class="test loading" id="test3">
+        <h3>Test 3: PayPal SDK Direct Load</h3>
+        <p id="test3-result">Testing...</p>
+    </div>
+
+    <div class="test loading" id="test4">
+        <h3>Test 4: Alternative PayPal Load</h3>
+        <p id="test4-result">Testing...</p>
+    </div>
+
+    <script>
+        function updateTest(testId, message, success) {
+            const element = document.getElementById(testId);
+            const result = document.getElementById(testId + '-result');
+
+            result.textContent = message;
+            element.className = 'test ' + (success ? 'success' : 'error');
+        }
+
+        // Test 1: Basic internet connectivity
+        fetch('https://httpbin.org/get')
+            .then(response => response.json())
+            .then(data => {
+                updateTest('test1', '✅ Internet connectivity working', true);
+                runTest2();
+            })
+            .catch(error => {
+                updateTest('test1', '❌ No internet connectivity: ' + error.message, false);
+                runTest2(); // Try anyway
+            });
+
+        function runTest2() {
+            // Test 2: PayPal domain accessibility
+            fetch('https://www.paypal.com/favicon.ico', { mode: 'no-cors' })
+                .then(() => {
+                    updateTest('test2', '✅ PayPal domain accessible', true);
+                })
+                .catch(error => {
+                    updateTest('test2', '❌ PayPal domain blocked: ' + error.message, false);
+                })
+                .finally(() => {
+                    runTest3();
+                });
+        }
+
+        function runTest3() {
+            // Test 3: Try to load PayPal SDK
+            const script = document.createElement('script');
+            script.src = 'https://www.paypal.com/sdk/js?client-id=sb&currency=USD';
+
+            script.onload = function() {
+                setTimeout(() => {
+                    if (typeof paypal !== 'undefined') {
+                        updateTest('test3', '✅ PayPal SDK loaded successfully', true);
+                    } else {
+                        updateTest('test3', '⚠️ PayPal SDK script loaded but paypal object not available', false);
+                    }
+                    runTest4();
+                }, 1000);
+            };
+
+            script.onerror = function() {
+                updateTest('test3', '❌ PayPal SDK script failed to load', false);
+                runTest4();
+            };
+
+            document.head.appendChild(script);
+        }
+
+        function runTest4() {
+            // Test 4: Alternative approach
+            updateTest('test4', 'Creating PayPal form fallback...', true);
+
+            const fallbackDiv = document.createElement('div');
+            fallbackDiv.innerHTML = `
+                <h3>💡 Alternative Solution</h3>
+                <p>If PayPal SDK won't load, you can use a simple PayPal form:</p>
+                <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="your-business-email@example.com">
+                    <input type="hidden" name="item_name" value="Professional Website">
+                    <input type="hidden" name="amount" value="597.00">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="return" value="http://localhost:3000/success.html">
+                    <input type="hidden" name="cancel_return" value="http://localhost:3000/cancel.html">
+                    <input type="submit" value="Pay with PayPal (Fallback)" style="padding: 10px 20px; background: #0070ba; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                </form>
+                <p><small>This opens PayPal in a new tab - old school but reliable!</small></p>
+            `;
+
+            document.body.appendChild(fallbackDiv);
+        }
+
+        // Global error handler
+        window.onerror = function(msg, url, line, col, error) {
+            console.error('Error:', { msg, url, line, col, error });
+        };
+    </script>
+</body>
+</html>

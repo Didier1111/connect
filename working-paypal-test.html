@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Working PayPal Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .container { border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .success { background: #d1fae5; border-color: #10b981; color: #065f46; }
+        .error { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        .info { background: #dbeafe; border-color: #3b82f6; color: #1e40af; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Working PayPal Integration Test</h1>
+
+    <div class="container info">
+        <h3>📦 Product: Professional Website</h3>
+        <p><strong>Price:</strong> $597.00 USD</p>
+        <p><strong>Description:</strong> Complete website with hosting and domain</p>
+    </div>
+
+    <div class="container">
+        <h3>💳 PayPal Checkout</h3>
+        <div id="paypal-button-container"></div>
+    </div>
+
+    <div class="container" id="status-container">
+        <h3>📊 Status</h3>
+        <p id="status">Initializing PayPal...</p>
+    </div>
+
+    <div class="container" id="result-container" style="display: none;">
+        <h3>📋 Transaction Result</h3>
+        <div id="result"></div>
+    </div>
+
+    <!-- PayPal SDK with Demo Client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AfvxOO3j2QQKWHBGTntgKoiojFWnw2tXPWdfLvz9CQ19mFP8GhHaNwpGvhGBSgLKcmE5w5V-KbFJkh8&currency=USD&intent=capture"></script>
+
+    <script>
+        function updateStatus(message, type = 'info') {
+            const statusEl = document.getElementById('status');
+            const container = document.getElementById('status-container');
+
+            statusEl.textContent = message;
+            container.className = `container ${type}`;
+            console.log(`Status: ${message}`);
+        }
+
+        function showResult(message, type = 'success') {
+            const resultEl = document.getElementById('result');
+            const container = document.getElementById('result-container');
+
+            resultEl.innerHTML = message;
+            container.className = `container ${type}`;
+            container.style.display = 'block';
+        }
+
+        // Wait for PayPal SDK to load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof paypal === 'undefined') {
+                    updateStatus('❌ PayPal SDK failed to load', 'error');
+                    return;
+                }
+
+                updateStatus('✅ PayPal SDK loaded, rendering buttons...', 'success');
+
+                try {
+                    paypal.Buttons({
+                        style: {
+                            layout: 'vertical',
+                            color: 'blue',
+                            shape: 'rect',
+                            label: 'paypal'
+                        },
+
+                        createOrder: function(data, actions) {
+                            updateStatus('🔄 Creating PayPal order...', 'info');
+
+                            return actions.order.create({
+                                purchase_units: [{
+                                    amount: {
+                                        value: '597.00',
+                                        currency_code: 'USD'
+                                    },
+                                    description: 'Professional Website - 1 Year Hosting',
+                                    custom_id: 'WEBSITE_' + Date.now()
+                                }],
+                                application_context: {
+                                    brand_name: 'Project Connect',
+                                    landing_page: 'BILLING',
+                                    user_action: 'PAY_NOW'
+                                }
+                            });
+                        },
+
+                        onApprove: function(data, actions) {
+                            updateStatus('✅ Payment approved, capturing...', 'success');
+
+                            return actions.order.capture().then(function(details) {
+                                updateStatus('🎉 Payment completed successfully!', 'success');
+
+                                showResult(`
+                                    <h4>🎉 Payment Successful!</h4>
+                                    <p><strong>Transaction ID:</strong> ${details.id}</p>
+                                    <p><strong>Payer Name:</strong> ${details.payer.name.given_name} ${details.payer.name.surname}</p>
+                                    <p><strong>Email:</strong> ${details.payer.email_address}</p>
+                                    <p><strong>Amount:</strong> $${details.purchase_units[0].amount.value} ${details.purchase_units[0].amount.currency_code}</p>
+                                    <p><strong>Status:</strong> ${details.status}</p>
+                                    <hr>
+                                    <p>✅ Your website will be set up within 24 hours!</p>
+                                    <p>📧 Setup instructions sent to your email.</p>
+                                `, 'success');
+                            });
+                        },
+
+                        onError: function(err) {
+                            console.error('PayPal Error:', err);
+                            updateStatus('❌ Payment error occurred', 'error');
+                            showResult(`
+                                <h4>❌ Payment Error</h4>
+                                <p>An error occurred during payment processing.</p>
+                                <p><strong>Error:</strong> ${err}</p>
+                                <p>Please try again or contact support.</p>
+                            `, 'error');
+                        },
+
+                        onCancel: function(data) {
+                            updateStatus('⚠️ Payment cancelled by user', 'info');
+                            showResult(`
+                                <h4>⚠️ Payment Cancelled</h4>
+                                <p>You cancelled the payment process.</p>
+                                <p>You can try again anytime by clicking the PayPal button above.</p>
+                            `, 'info');
+                        }
+
+                    }).render('#paypal-button-container').then(function() {
+                        updateStatus('✅ PayPal buttons ready! Click to pay.', 'success');
+                    }).catch(function(error) {
+                        console.error('PayPal Render Error:', error);
+                        updateStatus('❌ Failed to render PayPal buttons', 'error');
+                        showResult(`
+                            <h4>❌ Button Render Error</h4>
+                            <p><strong>Error:</strong> ${error.message}</p>
+                            <p>This might be due to:</p>
+                            <ul>
+                                <li>Invalid PayPal Client ID</li>
+                                <li>Network connectivity issues</li>
+                                <li>Browser security settings</li>
+                            </ul>
+                        `, 'error');
+                    });
+
+                } catch (error) {
+                    console.error('PayPal Initialization Error:', error);
+                    updateStatus('❌ PayPal initialization failed', 'error');
+                    showResult(`
+                        <h4>❌ Initialization Error</h4>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                    `, 'error');
+                }
+            }, 1000);
+        });
+
+        // Log all errors
+        window.onerror = function(msg, url, line, col, error) {
+            console.error('JavaScript Error:', { msg, url, line, col, error });
+            updateStatus('❌ JavaScript error occurred', 'error');
+        };
+    </script>
+</body>
+</html>
