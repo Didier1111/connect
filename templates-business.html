@@ -903,16 +903,33 @@
         </div>
     </footer>
 
-    <!-- PayPal SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD&intent=capture"></script>
+    <!-- PayPal SDK - Replace YOUR_PAYPAL_CLIENT_ID with your actual Client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AeA1QIjRwUecFGejOBbwrAJNF0-n0qXqnGlvmw6pT9fjXG1qfakTplyfvIqoAe2xW1hg8Xs4i6fJQ5T&currency=USD&intent=capture"></script>
+
+    <!-- PayPal Payment Integration -->
+    <div id="paypal-payment-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 2rem; border-radius: 1rem; max-width: 500px; width: 90%; position: relative;">
+            <button id="close-modal" style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h3 id="modal-title" style="margin-bottom: 1rem;">Complete Your Purchase</h3>
+            <div id="modal-details" style="margin-bottom: 1.5rem; padding: 1rem; background: #f9fafb; border-radius: 0.5rem;">
+                <p><strong>Website:</strong> <span id="selected-template"></span></p>
+                <p><strong>Price:</strong> $<span id="selected-price"></span>/year</p>
+                <p><strong>Includes:</strong> Custom domain, SSL, hosting, 24/7 support</p>
+            </div>
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+
     <script>
         // PayPal configuration
         const PAYPAL_CONFIG = {
-            // PayPal Business Email (set via environment variable)
-            businessEmail: process.env.PAYPAL_BUSINESS_EMAIL || 'business@example.com',
+            businessEmail: 'sb-qzxfq32457281@business.example.com', // PayPal sandbox business email
             currency: 'USD',
             environment: 'sandbox' // Change to 'production' when ready to go live
         };
+
+        let currentTemplate = '';
+        let currentPrice = 0;
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -957,26 +974,98 @@
                     });
                 }
 
-                // Show purchase modal or redirect to PayPal Checkout
-                if (confirm(`Ready to get your ${templateName} website live for $${price}/year?\n\nThis will redirect you to our secure PayPal payment processor.\n\nYour website will be live with custom domain within 24 hours - fully hosted and managed.`)) {
-                    // Track purchase intent
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'add_to_cart', {
-                            currency: 'USD',
-                            value: parseFloat(price),
-                            items: [{
-                                item_name: templateName,
-                                category: 'Website Template',
-                                quantity: 1,
-                                price: parseFloat(price)
-                            }]
-                        });
-                    }
+                // Set current selection
+                currentTemplate = templateName;
+                currentPrice = parseFloat(price);
 
-                    // Redirect to PayPal or show PayPal modal
-                    window.location.href = `#paypal-checkout-${templateName.toLowerCase().replace(/\s+/g, '-')}`;
-                }
+                // Update modal content
+                document.getElementById('selected-template').textContent = templateName;
+                document.getElementById('selected-price').textContent = price;
+
+                // Show PayPal payment modal
+                showPayPalModal();
             });
+        });
+
+        // Show PayPal payment modal
+        function showPayPalModal() {
+            const modal = document.getElementById('paypal-payment-modal');
+            modal.style.display = 'flex';
+
+            // Clear previous PayPal buttons
+            document.getElementById('paypal-button-container').innerHTML = '';
+
+            // Initialize PayPal buttons
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: currentPrice.toString(),
+                                currency_code: 'USD'
+                            },
+                            description: `${currentTemplate} - Professional Website (1 Year Hosting)`
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        // Track successful purchase
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'purchase', {
+                                transaction_id: details.id,
+                                currency: 'USD',
+                                value: currentPrice,
+                                items: [{
+                                    item_name: currentTemplate,
+                                    category: 'Website Template',
+                                    quantity: 1,
+                                    price: currentPrice
+                                }]
+                            });
+                        }
+
+                        // Facebook Pixel purchase tracking
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'Purchase', {
+                                value: currentPrice,
+                                currency: 'USD',
+                                content_name: currentTemplate
+                            });
+                        }
+
+                        // Close modal and show success message
+                        hidePayPalModal();
+
+                        alert(`🎉 Payment Successful!\n\nThank you ${details.payer.name.given_name}!\n\n✅ Order ID: ${details.id}\n✅ Website: ${currentTemplate}\n✅ Amount: $${currentPrice}\n\n📧 You'll receive setup instructions within 2 hours.\n📱 Your website will be live within 24 hours.\n\nQuestions? Contact: support@projectconnect.dev`);
+
+                        // Optional: Redirect to thank you page
+                        // window.location.href = '/thank-you.html';
+                    });
+                },
+                onError: function(err) {
+                    console.error('PayPal payment error:', err);
+                    alert('❌ Payment failed. Please try again or contact support.');
+                    hidePayPalModal();
+                },
+                onCancel: function(data) {
+                    console.log('PayPal payment cancelled:', data);
+                    hidePayPalModal();
+                }
+            }).render('#paypal-button-container');
+        }
+
+        // Hide PayPal payment modal
+        function hidePayPalModal() {
+            document.getElementById('paypal-payment-modal').style.display = 'none';
+        }
+
+        // Close modal when clicking X or outside
+        document.getElementById('close-modal').addEventListener('click', hidePayPalModal);
+        document.getElementById('paypal-payment-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                hidePayPalModal();
+            }
         });
 
         // Contact buttons
