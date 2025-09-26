@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Cancelled - Project Connect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cancel-container {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 1rem;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 2rem;
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: #a16207;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="cancel-container">
+        <div class="icon">⚠️</div>
+        <h1 class="title">Payment Cancelled</h1>
+        <p class="subtitle">No payment was processed. You can try again anytime.</p>
+
+        <div class="info">
+            <h3>💡 What happened?</h3>
+            <p>You cancelled the payment process or closed the PayPal window before completing the transaction.</p>
+
+            <h4>🔒 Your information is safe</h4>
+            <ul>
+                <li>No charges were made to your account</li>
+                <li>No personal information was stored</li>
+                <li>You can retry the purchase anytime</li>
+            </ul>
+
+            <h4>❓ Need help?</h4>
+            <p>If you experienced any issues during checkout, please contact our support team:</p>
+            <p><strong>Email:</strong> support@projectconnect.dev</p>
+            <p><strong>Response time:</strong> Within 4 hours</p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <a href="http://localhost:3000/paypal-form-solution.html" class="btn">🔄 Try Payment Again</a>
+            <a href="mailto:support@projectconnect.dev" class="btn btn-secondary">📧 Contact Support</a>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #d1d5db;">
+            <p style="color: #6b7280; font-size: 0.875rem;">
+                Need a different payment method? We also accept bank transfers and cryptocurrency.
+                <br>Contact us for alternative payment options.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Track cancelled payment
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'checkout_cancelled', {
+                currency: 'USD',
+                value: 0,
+                reason: 'user_cancelled'
+            });
+        }
+
+        console.log('Payment cancelled page loaded', {
+            referrer: document.referrer,
+            timestamp: new Date().toISOString(),
+            urlParams: Object.fromEntries(urlParams)
+        });
+    </script>
+</body>
+</html>

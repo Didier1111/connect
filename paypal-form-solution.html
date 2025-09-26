@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PayPal Form Solution - Website Templates</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            color: white;
+            border-radius: 1rem;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .template-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .template-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .template-card h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #10b981;
+            margin: 1rem 0;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .features li {
+            padding: 0.25rem 0;
+            color: #4b5563;
+        }
+
+        .features li:before {
+            content: "✅ ";
+            color: #10b981;
+        }
+
+        .paypal-form {
+            margin-top: 1rem;
+        }
+
+        .paypal-btn {
+            background: #0070ba;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .paypal-btn:hover {
+            background: #005ea6;
+        }
+
+        .solution-info {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🚀 Professional Website Templates</h1>
+        <p>Fully hosted websites with custom domains - Live in 24 hours!</p>
+        <div class="warning">
+            <strong>💡 PayPal Classic Forms Solution</strong><br>
+            SDK-free payment processing that works reliably
+        </div>
+    </div>
+
+    <div class="solution-info">
+        <h3>🛠️ Payment Solution Status</h3>
+        <p><strong>Issue:</strong> PayPal SDK loading blocked (common with firewalls/antivirus)</p>
+        <p><strong>Solution:</strong> Using PayPal Classic Forms - 100% reliable, no JavaScript required</p>
+        <p><strong>Process:</strong> Click "Buy Now" → Redirects to PayPal → Complete payment → Return to confirmation</p>
+    </div>
+
+    <div class="template-grid">
+        <!-- Dental Practice Template -->
+        <div class="template-card">
+            <h3>🦷 Dental Practice Pro</h3>
+            <div class="price">$597<span style="font-size: 1rem; color: #6b7280;">/year</span></div>
+            <ul class="features">
+                <li>Custom domain included</li>
+                <li>SSL certificate & security</li>
+                <li>Appointment booking system</li>
+                <li>Patient review integration</li>
+                <li>Mobile responsive design</li>
+                <li>24/7 hosting & monitoring</li>
+            </ul>
+
+            <form class="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="your-business-email@example.com">
+                <input type="hidden" name="item_name" value="Dental Practice Pro Website">
+                <input type="hidden" name="item_number" value="DENTAL-PRO-001">
+                <input type="hidden" name="amount" value="597.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="return" value="http://localhost:3000/payment-success.html">
+                <input type="hidden" name="cancel_return" value="http://localhost:3000/payment-cancelled.html">
+                <input type="hidden" name="notify_url" value="http://localhost:3000/paypal-ipn">
+                <input type="submit" value="🦷 Buy Dental Website - $597" class="paypal-btn">
+            </form>
+        </div>
+
+        <!-- Law Firm Template -->
+        <div class="template-card">
+            <h3>⚖️ Law Firm Authority</h3>
+            <div class="price">$797<span style="font-size: 1rem; color: #6b7280;">/year</span></div>
+            <ul class="features">
+                <li>Custom domain included</li>
+                <li>SSL certificate & security</li>
+                <li>Practice area showcase</li>
+                <li>Attorney profile pages</li>
+                <li>Case result highlights</li>
+                <li>Lead capture forms</li>
+            </ul>
+
+            <form class="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="your-business-email@example.com">
+                <input type="hidden" name="item_name" value="Law Firm Authority Website">
+                <input type="hidden" name="item_number" value="LAW-AUTHORITY-001">
+                <input type="hidden" name="amount" value="797.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="return" value="http://localhost:3000/payment-success.html">
+                <input type="hidden" name="cancel_return" value="http://localhost:3000/payment-cancelled.html">
+                <input type="hidden" name="notify_url" value="http://localhost:3000/paypal-ipn">
+                <input type="submit" value="⚖️ Buy Law Firm Website - $797" class="paypal-btn">
+            </form>
+        </div>
+
+        <!-- E-commerce Template -->
+        <div class="template-card">
+            <h3>🛒 EliteStore E-commerce</h3>
+            <div class="price">$997<span style="font-size: 1rem; color: #6b7280;">/year</span></div>
+            <ul class="features">
+                <li>Custom domain included</li>
+                <li>SSL certificate & security</li>
+                <li>Shopping cart system</li>
+                <li>Payment processing setup</li>
+                <li>Product catalog management</li>
+                <li>Inventory tracking</li>
+            </ul>
+
+            <form class="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="your-business-email@example.com">
+                <input type="hidden" name="item_name" value="EliteStore E-commerce Website">
+                <input type="hidden" name="item_number" value="ECOMMERCE-ELITE-001">
+                <input type="hidden" name="amount" value="997.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="return" value="http://localhost:3000/payment-success.html">
+                <input type="hidden" name="cancel_return" value="http://localhost:3000/payment-cancelled.html">
+                <input type="hidden" name="notify_url" value="http://localhost:3000/paypal-ipn">
+                <input type="submit" value="🛒 Buy E-commerce Website - $997" class="paypal-btn">
+            </form>
+        </div>
+
+        <!-- SaaS Template -->
+        <div class="template-card">
+            <h3>☁️ CloudFlow SaaS</h3>
+            <div class="price">$897<span style="font-size: 1rem; color: #6b7280;">/year</span></div>
+            <ul class="features">
+                <li>Custom domain included</li>
+                <li>SSL certificate & security</li>
+                <li>Pricing table system</li>
+                <li>Feature comparison pages</li>
+                <li>Free trial signup forms</li>
+                <li>User dashboard interface</li>
+            </ul>
+
+            <form class="paypal-form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="your-business-email@example.com">
+                <input type="hidden" name="item_name" value="CloudFlow SaaS Website">
+                <input type="hidden" name="item_number" value="SAAS-CLOUDFLOW-001">
+                <input type="hidden" name="amount" value="897.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="return" value="http://localhost:3000/payment-success.html">
+                <input type="hidden" name="cancel_return" value="http://localhost:3000/payment-cancelled.html">
+                <input type="hidden" name="notify_url" value="http://localhost:3000/paypal-ipn">
+                <input type="submit" value="☁️ Buy SaaS Website - $897" class="paypal-btn">
+            </form>
+        </div>
+    </div>
+
+    <div class="solution-info">
+        <h3>🎯 How PayPal Classic Forms Work</h3>
+        <ol>
+            <li><strong>Click "Buy Now"</strong> - Opens PayPal in new tab/window</li>
+            <li><strong>Complete Payment</strong> - Standard PayPal checkout process</li>
+            <li><strong>Return to Site</strong> - Automatic redirect after payment</li>
+            <li><strong>Receive Confirmation</strong> - Email notification with order details</li>
+        </ol>
+
+        <p><strong>✅ Advantages:</strong></p>
+        <ul>
+            <li>Works with any network/firewall configuration</li>
+            <li>No JavaScript dependencies</li>
+            <li>Standard PayPal security and buyer protection</li>
+            <li>Mobile-friendly checkout process</li>
+        </ul>
+    </div>
+
+    <script>
+        // Add analytics tracking when forms are submitted
+        document.querySelectorAll('.paypal-form').forEach(form => {
+            form.addEventListener('submit', function() {
+                const itemName = this.querySelector('input[name="item_name"]').value;
+                const amount = this.querySelector('input[name="amount"]').value;
+
+                // Track with Google Analytics if available
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'begin_checkout', {
+                        currency: 'USD',
+                        value: parseFloat(amount),
+                        items: [{
+                            item_name: itemName,
+                            category: 'Website Template',
+                            quantity: 1,
+                            price: parseFloat(amount)
+                        }]
+                    });
+                }
+
+                console.log(`PayPal checkout initiated: ${itemName} - $${amount}`);
+            });
+        });
+    </script>
+</body>
+</html>
