@@ -12,6 +12,12 @@ const JWT_SECRET = process.env.JWT_SECRET || 'project-connect-secret';
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve static files (HTML, CSS, JS) from project root
+app.use(express.static('./', {
+  extensions: ['html', 'css', 'js', 'png', 'jpg', 'svg', 'ico'],
+  index: ['index.html', 'templates-business.html']
+}));
+
 // Connect to MongoDB with error handling (only if not in test environment)
 const connectDB = async () => {
   // Skip connection in test environment as it's handled by setup.js
