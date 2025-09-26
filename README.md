@@ -11,7 +11,7 @@ Project Connect is a revolutionary platform that creates sustainable income stre
 A **multi-vertical revenue-sharing platform** that turns open source contributions into sustainable income through:
 
 - **🏗️ Task Completion Agents API** - Marketplace for human/AI agents
-- **💼 Website Template Business** - Professional hosted websites
+- **💼 Hosted Website Service** - Custom websites delivered manually
 - **📈 Trading & ICT Systems** - Automated trading strategies
 - **🤖 AI Agent Marketplace** - Custom automation services
 - **💰 Payment Processing Platform** - Multi-gateway integrations
@@ -50,7 +50,7 @@ connect/
 │   ├── models/            # MongoDB schemas (User, Task, Agent)
 │   ├── routes/            # API endpoints
 │   └── services/          # Business logic
-├── templates-business.html # Website template business demo
+├── templates-business.html # Hosted website service demo
 ├── payment-demo.html      # Payment system demonstration
 ├── contributor-dashboard.html # Contributor tracking
 ├── specifications/        # API specs and requirements
@@ -80,16 +80,16 @@ npm start             # Production server
 - [ ] Payment escrow system (200 points)
 - [ ] Real-time chat/collaboration (150 points)
 
-### **2. 💼 Website Template Business**
-**Status:** Payment system working, needs template expansion
-**Tech:** PayPal integration, responsive design, hosting automation
+### **2. 💼 Hosted Website Service**
+**Status:** Payment system working, manual delivery workflow
+**Tech:** PayPal integration, responsive design, manual hosting setup
 
 **Contribution Areas:**
-- [ ] New industry templates (75 points each)
-- [ ] Template customization tools (100 points)
-- [ ] Automated hosting deployment (150 points)
-- [ ] Customer dashboard (100 points)
-- [ ] SEO optimization tools (75 points)
+- [ ] New industry website designs (75 points each)
+- [ ] Customer onboarding forms (50 points)
+- [ ] Order management system (100 points)
+- [ ] Website customization templates (75 points)
+- [ ] Delivery workflow automation (100 points)
 
 ### **3. 📈 Trading & ICT Systems**
 **Status:** Strategy frameworks planned, needs implementation
@@ -225,7 +225,7 @@ Every merged contribution earns points. Monthly revenue is distributed based on 
 ### **✅ Working Systems:**
 - Express API server with authentication
 - PayPal payment integration
-- Website template business demo
+- Hosted website service with manual delivery
 - Contributor point tracking system
 - MongoDB data models (User, Task, Agent)
 
@@ -246,7 +246,7 @@ Every merged contribution earns points. Monthly revenue is distributed based on 
 ## 📊 **Business Model Transparency**
 
 ### **Revenue Streams:**
-1. **Website Templates** - $597-997 per sale
+1. **Hosted Websites** - $597-997 per custom website
 2. **Task Completion Fees** - 10-20% marketplace commission
 3. **AI Agent Services** - Subscription and usage fees
 4. **Trading Systems** - Performance-based fees
